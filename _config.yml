@@ -264,8 +264,8 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Wu]
+  first_name: [Zeqi, Z.]
 
   style: apa
   locale: en
@@ -321,6 +321,7 @@ filtered_bibtex_keywords:
     supp,
     video,
     website,
+    month
   ]
 
 # Maximum number of authors to be shown for each publication (more authors are visible on click)
