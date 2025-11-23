@@ -369,7 +369,7 @@ ninja.data = [{
         title: 'arXiv',
         section: 'Socials',
         handler: () => {
-          window.open("https://arxiv.org/a/zeqiwu.html", "_blank");
+          window.open("https://arxiv.org/a/wu_z_12.html", "_blank");
         },
       },{
         id: 'social-cv',
