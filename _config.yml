@@ -6,14 +6,13 @@ title: Wu, Zeqi (吴泽齐) # the website title (if blank, full name will be use
 first_name: Zeqi
 middle_name:
 last_name: Wu
-contact_note: 
+contact_note:
 description: # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: econometrics, statistics, causal inference, machine learning # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-
 icon:  # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://zeqiwu1202.github.io # the base hostname & protocol for your site
