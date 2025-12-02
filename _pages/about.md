@@ -24,7 +24,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hi! My name is Zeqi Wu. I'm currently a Ph.D. candidate at the Institute of Statistics and Big data, Renmin University of China, advised by Prof.[Zheng Zhang](https://sites.google.com/view/zheng-zhang/home), and a visiting Ph.D. student at the School of Management and Economics, the Chinese University of Hong Kong (ShenZhen), advised by Prof.[Chunrong Ai](https://sme.cuhk.edu.cn/en/teacher/1178). Before that, I earned my Bachelor's degree in Statistics from Department of Statistics and Data Science, School of Economics, Xiamen University in 2023.
+Hi! My name is Zeqi Wu. I'm currently a Ph.D. candidate at the Institute of Statistics and Big data, Renmin University of China, advised by Prof.[Zheng Zhang](https://sites.google.com/view/zheng-zhang/home), and a visiting Ph.D. student at the School of Management and Economics, the Chinese University of Hong Kong, Shenzhen, advised by Prof.[Chunrong Ai](https://sme.cuhk.edu.cn/en/teacher/1178). Before that, I earned my Bachelor's degree in Statistics from Department of Statistics and Data Science, School of Economics, Xiamen University in 2023.
 
 My research interests lie in causal inference, semi/non-parametric estimation and inference, policy evaluation and learning, and spatial and network econometrics.
 
