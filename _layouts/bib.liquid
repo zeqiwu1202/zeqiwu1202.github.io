@@ -198,10 +198,14 @@
         </a>      
       {% endif %}
       {% if entry.doi %}
-        <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button" style="text-transform: none;">DOI</a>
+        <a href="https://doi.org/{{ entry.doi }}" class="btn btn-outline-primary btn-sm rounded-pill" role="button" style="text-transform: none;">
+          <i class="ai ai-doi mr-1"></i> DOI
+        </a>
       {% endif %}
       {% if entry.arxiv %}
-        <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button" style="text-transform: none;">arXiv</a>
+      <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-outline-primary btn-sm rounded-pill" role="button" style="text-transform: none;">
+        <i class="ai ai-arxiv mr-1"></i> arXiv
+      </a>
       {% endif %}
       {% if entry.bibtex_show %}
         <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
@@ -222,9 +226,13 @@
       {% endif %}
       {% if entry.supp %}
         {% if entry.supp contains '://' %}
-          <a href="{{ entry.supp }}" class="btn btn-sm z-depth-0" role="button" style="text-transform: none;">Supplementary Material</a>
+          <a href="{{ entry.supp }}" class="btn btn-outline-primary btn-sm rounded-pill" role="button" style="text-transform: none;">
+            <i class="fas fa-paperclip mr-1"></i> Supplementary
+          </a>
         {% else %}
-          <a href="{{ entry.supp | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button" style="text-transform: none;">Supplementary Material</a>
+          <a href="{{ entry.supp | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-outline-primary btn-sm rounded-pill" role="button" style="text-transform: none;">
+            <i class="fas fa-paperclip mr-1"></i> Supplementary Meterial
+          </a>
         {% endif %}
       {% endif %}
       {% if entry.video and site.enable_video_embedding %}
@@ -247,9 +255,13 @@
       {% endif %}
       {% if entry.slides %}
         {% if entry.slides contains '://' %}
-          <a href="{{ entry.slides }}" class="btn btn-sm z-depth-0" role="button" style="text-transform: none;">Slides</a>
+          <a href="{{ entry.slides }}" class="btn btn-outline-primary btn-sm rounded-pill" role="button" style="text-transform: none;">
+            <i class="fas fa-file-powerpoint mr-1"></i> Slides
+          </a>
         {% else %}
-          <a href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button" style="text-transform: none;">Slides</a>
+          <a href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-outline-primary btn-sm rounded-pill" role="button" style="text-transform: none;">
+            <i class="fas fa-file-powerpoint mr-1"></i> Slides
+          </a>
         {% endif %}
       {% endif %}
       {% if entry.website %}
