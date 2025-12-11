@@ -1528,26 +1528,35 @@ a.abstract.abs-active .abstract-icon {
   transform: rotate(180deg) !important;
 }
 
-.btn-outline-pink {
-  color: #e83e8c; 
-  border-color: #e83e8c;
+
+.btn-academic-blue {
+  color: #007bff; 
+  border-color: #007bff;
+  transition: all 0.2s ease-in-out; 
 }
 
-.btn-outline-pink:hover {
-  background-color: #e83e8c;
+
+.btn-academic-blue:hover,
+.btn-academic-blue:active {
+  background-color: #007bff;
   color: #fff !important;
+  transform: translateY(-2px); 
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); 
+  text-decoration: none;
 }
 
-body.fixed-top-nav[data-theme="dark"] .btn-outline-pink,
-body.dark .btn-outline-pink,
-html[data-theme="dark"] .btn-outline-pink {
-  color: #ff80ab !important; 
-  border-color: #ff80ab !important;
+
+body.fixed-top-nav[data-theme="dark"] .btn-academic-blue,
+body.dark .btn-academic-blue,
+html[data-theme="dark"] .btn-academic-blue {
+  color: #64b5f6 !important; 
+  border-color: #64b5f6 !important;
 }
 
-body.fixed-top-nav[data-theme="dark"] .btn-outline-pink:hover,
-body.dark .btn-outline-pink:hover,
-html[data-theme="dark"] .btn-outline-pink:hover {
-  background-color: #ff80ab !important;
+body.fixed-top-nav[data-theme="dark"] .btn-academic-blue:hover,
+body.dark .btn-academic-blue:hover,
+html[data-theme="dark"] .btn-academic-blue:hover {
+  background-color: #64b5f6 !important;
   color: #000 !important; 
+  box-shadow: 0 4px 8px rgba(100, 181, 246, 0.4);
 }
