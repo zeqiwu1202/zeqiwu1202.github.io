@@ -1518,3 +1518,12 @@ mjx-container[jax="CHTML"][display="true"] {
   font-size: 1.125rem;
   line-height: 1.3;               
 }
+
+.abstract-icon {
+  transition: transform 0.3s ease-in-out;
+  display: inline-block; 
+}
+
+a.abstract.open .abstract-icon {
+  transform: rotate(180deg);
+}
