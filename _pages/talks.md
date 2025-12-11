@@ -13,7 +13,5 @@ nav_order: 5
 
 - The 10th Meeting of Young Econometricians in Asian-Pacific Region (YEAP), Peking University, Beijing, China, Oct 2025.
 
-- Clubear Online Seminar, Nov 2025. 
-<a href="../assets/pdf/FDM_clubear.pdf" class="btn btn-academic-blue btn-sm rounded-pill align-middle" target="_blank" rel="noopener noreferrer" style="text-transform: none;">
-  <i class="fas fa-file-powerpoint mr-1"></i> Slides
-</a>
+- Clubear Online Seminar, Nov 2025. [[Click for Slides]](../assets/pdf/FDM_clubear.pdf)
+
