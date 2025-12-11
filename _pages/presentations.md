@@ -6,15 +6,7 @@ description:
 nav: true
 nav_order: 5
 ---
-<style>
-ul li {
-  margin-bottom: 1rem; 
-}
 
-ol li {
-  margin-bottom: 1rem;
-}
-</style>
 
 
 - 2025 Asian Summer School in Econometrics and Statistics, Xiamen University, Xiamen, China, Jul 2025.
