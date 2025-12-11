@@ -28,5 +28,5 @@ Hi! My name is Zeqi Wu. I'm currently a Ph.D. candidate at the Institute of Stat
 
 My research interests lie in causal inference, semi/non-parametric estimation and inference, policy evaluation and learning, and spatial and network econometrics.
 
-Contact: [wuzeqi@ruc.edu.cn](mailto:wuzeqi@ruc.edu.cn).
+Contact: wuzeqi`at`ruc`dot`edu`dot`cn
 
