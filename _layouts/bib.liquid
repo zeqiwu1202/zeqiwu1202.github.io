@@ -222,7 +222,7 @@
         {% if entry.supp contains '://' %}
           <a href="{{ entry.supp }}" class="btn btn-sm z-depth-0" role="button" style="text-transform: none;">Supplementary Material</a>
         {% else %}
-          <a href="{{ entry.supp | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">Supplementary Material</a>
+          <a href="{{ entry.supp | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button" style="text-transform: none;">Supplementary Material</a>
         {% endif %}
       {% endif %}
       {% if entry.video and site.enable_video_embedding %}
