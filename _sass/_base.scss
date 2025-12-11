@@ -4,26 +4,20 @@
 
 // Typography
 
-
-p,
-div,
-li,
-span {
-  font-size: 1.25rem;
+body {
+  font-size: 1.25rem; 
   color: var(--global-text-color);
   font-weight: 350; 
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--global-text-color);
-  font-weight: 700; 
+p, li {
+
+  line-height: 1.6; 
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; 
+}
 
 em,
 strong {
