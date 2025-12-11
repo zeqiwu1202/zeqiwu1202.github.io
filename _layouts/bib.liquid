@@ -203,6 +203,17 @@
   </a>
 {% endif %}
 
+{% if entry.doi %}
+  <a href="https://doi.org/{{ entry.doi }}" class="btn btn-outline-secondary btn-sm rounded-pill" role="button" style="text-transform: none;">
+    <i class="ai ai-doi mr-1"></i> DOI
+  </a>
+{% endif %}
+{% if entry.arxiv %}
+  <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-outline-dark btn-sm rounded-pill" role="button" style="text-transform: none;">
+    <i class="ai ai-arxiv mr-1"></i> arXiv
+  </a>
+{% endif %}
+
 {% if entry.pdf %}
   {% if entry.pdf contains '://' %}
     <a href="{{ entry.pdf }}" class="btn btn-outline-danger btn-sm rounded-pill" role="button" style="text-transform: none;">
@@ -215,29 +226,11 @@
   {% endif %}
 {% endif %}
 
-{% if entry.arxiv %}
-  <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-outline-dark btn-sm rounded-pill" role="button" style="text-transform: none;">
-    <i class="ai ai-arxiv mr-1"></i> arXiv
-  </a>
-{% endif %}
 
-{% if entry.doi %}
-  <a href="https://doi.org/{{ entry.doi }}" class="btn btn-outline-secondary btn-sm rounded-pill" role="button" style="text-transform: none;">
-    <i class="ai ai-doi mr-1"></i> DOI
-  </a>
-{% endif %}
 
-{% if entry.slides %}
-  {% if entry.slides contains '://' %}
-    <a href="{{ entry.slides }}" class="btn btn-outline-warning btn-sm rounded-pill" role="button" style="text-transform: none;">
-      <i class="fas fa-file-powerpoint mr-1"></i> Slides
-    </a>
-  {% else %}
-    <a href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-outline-warning btn-sm rounded-pill" role="button" style="text-transform: none;">
-      <i class="fas fa-file-powerpoint mr-1"></i> Slides
-    </a>
-  {% endif %}
-{% endif %}
+
+
+
 
 {% if entry.supp %}
   {% if entry.supp contains '://' %}
@@ -251,6 +244,17 @@
   {% endif %}
 {% endif %}
 
+{% if entry.slides %}
+  {% if entry.slides contains '://' %}
+    <a href="{{ entry.slides }}" class="btn btn-outline-warning btn-sm rounded-pill" role="button" style="text-transform: none;">
+      <i class="fas fa-file-powerpoint mr-1"></i> Slides
+    </a>
+  {% else %}
+    <a href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-outline-warning btn-sm rounded-pill" role="button" style="text-transform: none;">
+      <i class="fas fa-file-powerpoint mr-1"></i> Slides
+    </a>
+  {% endif %}
+{% endif %}
 
 
       {% if entry.bibtex_show %}
