@@ -18,7 +18,12 @@ li,
 span,
 strong {
   color: var(--global-text-color);
-  font-family: "Inter", sans-serif !important;
+}
+body {
+  color: var(--global-text-color);
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif !important; 
+
 }
 
 hr {
