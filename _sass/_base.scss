@@ -1520,10 +1520,10 @@ mjx-container[jax="CHTML"][display="true"] {
 }
 
 .abstract-icon {
+  display: inline-block !important; 
   transition: transform 0.3s ease-in-out;
-  display: inline-block; 
 }
 
-a.abstract.open .abstract-icon {
-  transform: rotate(180deg);
+a.abstract.abs-active .abstract-icon {
+  transform: rotate(180deg) !important;
 }

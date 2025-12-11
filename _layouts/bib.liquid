@@ -194,13 +194,13 @@
       {% endif %}
       {% if entry.abstract %}
         <a class="abstract btn btn-outline-primary btn-sm rounded-pill" role="button" 
-            style="text-transform: none;" 
-            onclick="this.classList.toggle('open')">
-          <i class="fas fa-file-alt mr-1"></i> 
+          style="text-transform: none;" 
+          onclick="this.classList.toggle('abs-active')">
+            <i class="fas fa-file-alt mr-1"></i> 
               Abstract 
-          <i class="fas fa-angle-down ml-1 abstract-icon"></i>
-        </a>
-      {% endif %}
+            <i class="fas fa-angle-down ml-1 abstract-icon"></i>
+            </a>
+        {% endif %}
       {% if entry.doi %}
         <a href="https://doi.org/{{ entry.doi }}" class="btn btn-outline-primary btn-sm rounded-pill" role="button" style="text-transform: none;">
           <i class="ai ai-doi mr-1"></i> DOI
