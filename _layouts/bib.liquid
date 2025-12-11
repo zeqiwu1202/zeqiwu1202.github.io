@@ -282,17 +282,7 @@
           <a href="{{ entry.poster | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">Poster</a>
         {% endif %}
       {% endif %}
-      {% if entry.slides %}
-        {% if entry.slides contains '://' %}
-          <a href="{{ entry.slides }}" class="btn btn-outline-primary btn-sm rounded-pill" role="button" style="text-transform: none;">
-            <i class="fas fa-file-powerpoint mr-1"></i> Slides
-          </a>
-        {% else %}
-          <a href="{{ entry.slides | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-outline-primary btn-sm rounded-pill" role="button" style="text-transform: none;">
-            <i class="fas fa-file-powerpoint mr-1"></i> Slides
-          </a>
-        {% endif %}
-      {% endif %}
+      
       {% if entry.website %}
         <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
       {% endif %}
