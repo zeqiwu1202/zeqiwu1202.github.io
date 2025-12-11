@@ -1527,3 +1527,27 @@ mjx-container[jax="CHTML"][display="true"] {
 a.abstract.abs-active .abstract-icon {
   transform: rotate(180deg) !important;
 }
+
+.btn-outline-pink {
+  color: #e83e8c; 
+  border-color: #e83e8c;
+}
+
+.btn-outline-pink:hover {
+  background-color: #e83e8c;
+  color: #fff !important;
+}
+
+body.fixed-top-nav[data-theme="dark"] .btn-outline-pink,
+body.dark .btn-outline-pink,
+html[data-theme="dark"] .btn-outline-pink {
+  color: #ff80ab !important; 
+  border-color: #ff80ab !important;
+}
+
+body.fixed-top-nav[data-theme="dark"] .btn-outline-pink:hover,
+body.dark .btn-outline-pink:hover,
+html[data-theme="dark"] .btn-outline-pink:hover {
+  background-color: #ff80ab !important;
+  color: #000 !important; 
+}
