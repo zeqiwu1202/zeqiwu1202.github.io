@@ -74,34 +74,39 @@ nav_order: 5
   }
   
 
+ 
   @media (max-width: 576px) {
+    
     .talk-row {
-      flex-direction: column; 
-      margin-bottom: 30px;    
+      flex-direction: column !important;
+      margin-bottom: 20px !important;
+      align-items: flex-start !important; 
     }
     
     .talk-date {
-      width: 100%;           
-      margin-bottom: 0px;    
-      padding-bottom: 0px;    
-      line-height: 1.2;       
+      flex: none !important;
+      width: 100% !important;
+      margin-bottom: 0px !important; 
+      padding-bottom: 0px !important;
+      line-height: 1.2 !important;
       
-      font-weight: 600;
-      font-size: 0.85rem;     
+      font-size: 0.85rem !important;
       opacity: 0.6;
-      letter-spacing: 0.5px;  
-      text-transform: uppercase; 
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
     .talk-content {
-      width: 100%;
+      width: 100% !important;
+      flex: none !important;
     }
 
     .talk-event {
-      margin-top: 2px;       
-      line-height: 1.3;     
+      margin-top: 2px !important; /* 只有 2px 的间距 */
+      line-height: 1.3 !important;
     }
   }
+
 </style>
 
 <div class="talk-row">
