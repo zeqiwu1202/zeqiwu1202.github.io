@@ -101,7 +101,7 @@ nav_order: 5
 <div class="talk-row">
   <div class="talk-date">Oct 2025</div>
   <div class="talk-content">
-    <div class="talk-event">The 10th Meeting of Young Econometricians (YEAP)</div>
+    <div class="talk-event">The 10th Meeting of Young Econometricians in Asian-Pacific Region (YEAP)</div>
     <div class="talk-loc">Peking University, Beijing, China</div>
   </div>
 </div>
