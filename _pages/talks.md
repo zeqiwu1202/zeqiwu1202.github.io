@@ -109,7 +109,7 @@ nav_order: 5
 <div class="talk-row">
   <div class="talk-date">Jul 2025</div>
   <div class="talk-content">
-    <div class="talk-event">Asian Summer School in Econometrics and Statistics</div>
+    <div class="talk-event">2025 Asian Summer School in Econometrics and Statistics</div>
     <div class="talk-loc">Xiamen University, Xiamen, China</div>
   </div>
 </div>
