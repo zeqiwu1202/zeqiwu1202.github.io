@@ -8,46 +8,83 @@ nav_order: 5
 ---
 
 <style>
+  /* 容器：使用 Flex 布局 */
   .talk-row {
     display: flex;
-    margin-bottom: 25px;
-    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 30px; /* 每个 Talk 之间的间距 */
+    align-items: baseline; /* 保持文字基线对齐 */
   }
+
+  /* 左侧：日期 */
   .talk-date {
-    flex: 0 0 120px;
-    font-weight: 400;
-    color: #888;
+    flex: 0 0 120px; /* 固定宽度，防止换行 */
+    font-family: 'Open Sans', sans-serif;
     font-size: 0.9rem;
-    padding-top: 2px;
+    /* 关键点：不要写死颜色，使用继承颜色的透明度 */
+    color: inherit; 
+    opacity: 0.6; 
   }
+
+  /* 右侧：内容容器 */
   .talk-content {
     flex: 1;
+    font-family: 'Open Sans', sans-serif;
   }
+
+  /* 会议标题 */
   .talk-event {
     font-weight: 600;
     font-size: 1.1rem;
-    color: #222;
+    color: inherit; /* 自动跟随主题色（黑或白） */
     margin-bottom: 4px;
+    line-height: 1.4;
   }
+
+  /* 地点信息 */
   .talk-loc {
     font-size: 0.95rem;
     font-style: italic;
-    color: #555;
+    color: inherit;
+    opacity: 0.8; /* 稍微比日期深一点，比标题浅一点 */
+    margin-bottom: 6px;
   }
+
+  /* 幻灯片按钮 */
   .talk-link a {
-    font-size: 0.85rem;
     display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0px 6px;
-    color: #555;
+    font-size: 0.8rem;
+    font-weight: 600;
     text-decoration: none;
-    margin-top: 5px;
-    transition: all 0.2s;
+    padding: 2px 8px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    
+    /* 适配黑白主题的核心：使用 currentColor */
+    color: inherit; 
+    border: 1px solid currentColor; 
+    opacity: 0.5; /* 默认半透明 */
   }
+
+  /* 鼠标悬停时的效果 */
   .talk-link a:hover {
-    border-color: #000;
-    color: #000;
+    opacity: 1; /* 变实心 */
+    background-color: var(--global-theme-color, #007bff); /* 尝试调用主题色，如果没有就用蓝色 */
+    border-color: transparent;
+    color: #fff !important; /* 悬停时文字强制变白 */
+    text-decoration: none;
+  }
+  
+  /* 移动端适配：屏幕变窄时，改为上下排列 */
+  @media (max-width: 576px) {
+    .talk-row {
+      flex-direction: column;
+      margin-bottom: 35px;
+    }
+    .talk-date {
+      margin-bottom: 4px;
+      font-weight: 600;
+      opacity: 0.5;
+    }
   }
 </style>
 
@@ -72,7 +109,7 @@ nav_order: 5
 <div class="talk-row">
   <div class="talk-date">Jul 2025</div>
   <div class="talk-content">
-    <div class="talk-event">2025 Asian Summer School in Econometrics and Statistics</div>
+    <div class="talk-event">Asian Summer School in Econometrics and Statistics</div>
     <div class="talk-loc">Xiamen University, Xiamen, China</div>
   </div>
 </div>
