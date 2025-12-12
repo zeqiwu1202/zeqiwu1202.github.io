@@ -74,16 +74,33 @@ nav_order: 5
     text-decoration: none;
   }
   
-  /* 移动端适配：屏幕变窄时，改为上下排列 */
+
   @media (max-width: 576px) {
     .talk-row {
-      flex-direction: column;
-      margin-bottom: 35px;
+      flex-direction: column; /* 上下排列 */
+      margin-bottom: 30px;    /* 每一项之间的距离 */
     }
+    
     .talk-date {
-      margin-bottom: 4px;
+      width: 100%;            /* 占满整行 */
+      margin-bottom: 0px;     /* 核心：去除日期的下边距 */
+      padding-bottom: 0px;    /* 核心：去除内边距 */
+      line-height: 1.2;       /* 核心：收紧行高，防止文字上下有留白 */
+      
       font-weight: 600;
-      opacity: 0.5;
+      font-size: 0.85rem;     /* 稍微调小一点，显得精致 */
+      opacity: 0.6;
+      letter-spacing: 0.5px;  /* 稍微加点字间距，增加可读性 */
+      text-transform: uppercase; /* 变大写（可选），看起来像分类标签 */
+    }
+
+    .talk-content {
+      width: 100%;
+    }
+
+    .talk-event {
+      margin-top: 2px;       /* 核心：标题距离上方日期的距离，极小 */
+      line-height: 1.3;      /* 防止标题自己太高 */
     }
   }
 </style>
