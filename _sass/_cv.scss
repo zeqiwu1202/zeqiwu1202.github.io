@@ -642,12 +642,12 @@ ul.timeline li::before {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.3rem 0.7rem;
+  padding: 0.25rem 0.75rem;
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--global-theme-color);
-  background: rgba(var(--global-theme-color-rgb, 0, 123, 255), 0.1);
-  border: 1px solid var(--global-theme-color);
+  color: var(--global-text-color);
+  background: transparent;
+  border: 1px solid var(--global-text-color);
   border-radius: 4px;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -655,7 +655,9 @@ ul.timeline li::before {
 
 .talk-link-btn:hover {
   background: var(--global-theme-color);
+  border-color: var(--global-theme-color);
   color: #fff;
+  transform: translateY(-2px);
 }
 
 .talk-link-btn i {

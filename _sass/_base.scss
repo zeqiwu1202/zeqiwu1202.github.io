@@ -753,7 +753,17 @@ footer.sticky-bottom {
     margin-top: 0;
 
     li {
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
+      padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+      background: var(--global-bg-color);
+      border-left: 3px solid var(--global-theme-color);
+      border-radius: 0 4px 4px 0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      transition: box-shadow 0.2s ease;
+
+      &:hover {
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+      }
 
       .preview {
       }
@@ -822,9 +832,12 @@ footer.sticky-bottom {
           padding-top: 0.25rem;
           padding-bottom: 0.25rem;
           margin-left: 0;
+          border-radius: 4px;
+          transition: all 0.2s ease;
 
           &:hover {
-            color: var(--global-theme-color);
+            color: #fff;
+            background-color: var(--global-theme-color);
             border-color: var(--global-theme-color);
           }
         }
