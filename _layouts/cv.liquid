@@ -1,127 +1,93 @@
 ---
 layout: default
 ---
-{% unless site.data.resume %}
-  <div class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        {{ page.title }}
-        {% if page.cv_pdf %}
-          <a
-            {% if page.cv_pdf contains '://' %}
-              href="{{ page.cv_pdf }}"
-            {% else %}
-              href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}"
-            {% endif %}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="float-right"
-          >
-            <i class="fa-solid fa-file-pdf"></i>
-          </a>
-        {% endif %}
-      </h1>
-      {% if page.description %}
-        <p class="post-description">{{ page.description }}</p>
-      {% endif %}
-    </header>
 
-    <article>
-      <div class="cv">
-        {% for entry in site.data.cv %}
-          <a class="anchor" id="{{ entry.title }}"></a>
-          <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ entry.title }}</h3>
-            <div>
-              {% if entry.type == 'list' %}
-                {% include cv/list.liquid %}
-              {% elsif entry.type == 'map' %}
-                {% include cv/map.liquid %}
-              {% elsif entry.type == 'nested_list' %}
-                {% include cv/nested_list.liquid %}
-              {% elsif entry.type == 'time_table' %}
-                {% include cv/time_table.liquid %}
-              {% elsif entry.type == 'list_groups' %}
-                {% include cv/list_groups.liquid %}
-              {% else %}
-                {{ entry.contents }}
-              {% endif %}
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    </article>
-  </div>
-{% else %}
-  <div class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        {{ page.title }}
-        {% if page.cv_pdf %}
-          <a
-            {% if page.cv_pdf contains '://' %}
-              href="{{ page.cv_pdf }}"
-            {% else %}
-              href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}"
-            {% endif %}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="float-right"
-          >
-            <i class="fa-solid fa-file-pdf"></i>
-          </a>
-        {% endif %}
-      </h1>
-      {% if page.description %}
-        <p class="post-description">{{ page.description }}</p>
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {{ page.title }}
+      {% if page.cv_pdf %}
+      <a href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}" target="_blank" rel="noopener noreferrer"
+        class="float-right">
+        <i class="fa-solid fa-file-pdf"></i>
+      </a>
       {% endif %}
-    </header>
+    </h1>
+    {% if page.description %}
+    <p class="post-description">{{ page.description }}</p>
+    {% endif %}
+  </header>
 
-    <article>
-      <div class="cv">
-        {% for data in site.data.resume %}
-          {% if site.jsonresume and site.jsonresume.size > 0 %}
-            {% unless site.jsonresume contains data[0] %}
-              {% continue %}
-            {% endunless %}
+  <article>
+    <div class="cv">
+
+      {% if site.data.cv.basics %}
+      <div class="cv-section mb-5">
+        <table class="table table-borderless table-sm">
+          <tr>
+            <td class="p-0 pr-3 font-weight-bold text-muted" style="width: 15%">Name</td>
+            <td class="p-0">{{ site.data.cv.basics.name }}</td>
+          </tr>
+          <tr>
+            <td class="p-0 pr-3 font-weight-bold text-muted">Email</td>
+            <td class="p-0"><a href="mailto:{{ site.data.cv.basics.email }}">{{ site.data.cv.basics.email }}</a></td>
+          </tr>
+          {% if site.data.cv.basics.url %}
+          <tr>
+            <td class="p-0 pr-3 font-weight-bold text-muted">Website</td>
+            <td class="p-0"><a href="{{ site.data.cv.basics.url }}" target="_blank">{{ site.data.cv.basics.url }}</a>
+            </td>
+          </tr>
           {% endif %}
-          {% if data[0] == 'meta' or data[1].size == 0 %} {% continue %} {% endif %}
-          <a class="anchor" id="{{ data[0] }}"></a>
-          <div class="card mt-3 p-3">
-            <h3 class="card-title font-weight-medium">{{ data[0] | capitalize }}</h3>
-            <div>
-              {% case data[0] %}
-                {% when 'basics' %}
-                  {% include resume/basics.liquid %}
-                {% when 'education' %}
-                  {% include resume/education.liquid %}
-                {% when 'work' %}
-                  {% include resume/work.liquid %}
-                {% when 'volunteer' %}
-                  {% include resume/volunteer.liquid %}
-                {% when 'projects' %}
-                  {% include resume/projects.liquid %}
-                {% when 'awards' %}
-                  {% include resume/awards.liquid %}
-                {% when 'skills' %}
-                  {% include resume/skills.liquid %}
-                {% when 'publications' %}
-                  {% include resume/publications.liquid %}
-                {% when 'languages' %}
-                  {% include resume/languages.liquid %}
-                {% when 'interests' %}
-                  {% include resume/interests.liquid %}
-                {% when 'certificates' %}
-                  {% include resume/certificates.liquid %}
-                {% when 'references' %}
-                  {% include resume/references.liquid %}
-                {% else %}
+        </table>
+      </div>
+      {% endif %}
 
-              {% endcase %}
+      {% if site.data.cv.education %}
+      <div class="cv-section mb-5">
+        <h3 class="mb-4 font-weight-bold">Education</h3>
+
+        {% for edu in site.data.cv.education %}
+        <div class="row mb-3">
+          <div class="col-md-2 col-sm-3 text-md-left text-muted font-weight-light"
+            style="font-size: 0.9rem; min-width: 100px;">
+            {% if edu.endDate == "Present" or edu.endDate == "present" %}
+            {{ edu.startDate | date: "%Y" }} – Present
+            {% else %}
+            {{ edu.startDate | date: "%Y" }} – {{ edu.endDate | date: "%Y" }}
+            {% endif %}
+          </div>
+
+          <div class="col-md-10 col-sm-9">
+            <div class="font-weight-bold">
+              {{ edu.institution }}
+            </div>
+            <div class="font-italic">
+              {{ edu.studyType }} in {{ edu.area }}
+            </div>
+            <div class="text-muted small">
+              {{ edu.location }}
             </div>
           </div>
+        </div>
         {% endfor %}
       </div>
-    </article>
-  </div>
-{% endunless %}
+      {% endif %}
+
+      {% if site.data.cv.languages %}
+      <div class="cv-section mb-5">
+        <h3 class="mb-4 font-weight-bold">Languages</h3>
+        <ul class="list-unstyled">
+          {% for lang in site.data.cv.languages %}
+          <li class="mb-1">
+            <span class="font-weight-bold">{{ lang.language }}:</span>
+            <span class="font-weight-light">{{ lang.fluency }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+    </div>
+  </article>
+</div>
