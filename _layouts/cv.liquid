@@ -3,91 +3,166 @@ layout: default
 ---
 
 <div class="post">
-  <header class="post-header">
-    <h1 class="post-title">
-      {{ page.title }}
-      {% if page.cv_pdf %}
-      <a href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}" target="_blank" rel="noopener noreferrer"
-        class="float-right">
-        <i class="fa-solid fa-file-pdf"></i>
-      </a>
-      {% endif %}
-    </h1>
-    {% if page.description %}
-    <p class="post-description">{{ page.description }}</p>
-    {% endif %}
-  </header>
-
   <article>
     <div class="cv">
-
-      {% if site.data.cv.basics %}
-      <div class="cv-section mb-5">
-        <table class="table table-borderless table-sm">
-          <tr>
-            <td class="p-0 pr-3 font-weight-bold text-muted" style="width: 15%">Name</td>
-            <td class="p-0">{{ site.data.cv.basics.name }}</td>
-          </tr>
-          <tr>
-            <td class="p-0 pr-3 font-weight-bold text-muted">Email</td>
-            <td class="p-0"><a href="mailto:{{ site.data.cv.basics.email }}">{{ site.data.cv.basics.email }}</a></td>
-          </tr>
-          {% if site.data.cv.basics.url %}
-          <tr>
-            <td class="p-0 pr-3 font-weight-bold text-muted">Website</td>
-            <td class="p-0"><a href="{{ site.data.cv.basics.url }}" target="_blank">{{ site.data.cv.basics.url }}</a>
-            </td>
-          </tr>
+      <header class="cv-page-header">
+        <h1 class="cv-page-title">
+          {{ page.title }}
+          {% if page.cv_pdf %}
+            <a href="{{ page.cv_pdf | prepend: 'assets/pdf/' | relative_url }}" target="_blank" rel="noopener noreferrer" class="cv-pdf-link">
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
           {% endif %}
-        </table>
-      </div>
+        </h1>
+      </header>
+
+      {% assign basics = site.data.cv.basics %}
+
+      {% if basics %}
+        <div class="cv-header">
+          {% if basics.name %}
+            <h2 class="cv-name">{{ basics.name }}</h2>
+          {% endif %}
+
+          <div class="cv-contact-bar">
+            {% if basics.email %}
+              <a href="mailto:{{ basics.email }}" class="cv-contact-link" title="Email">
+                <i class="fa-solid fa-envelope"></i>
+                <span>{{ basics.email }}</span>
+              </a>
+            {% endif %}
+            {% if basics.url %}
+              <a href="{{ basics.url }}" target="_blank" rel="noopener noreferrer" class="cv-contact-link" title="Website">
+                <i class="fa-solid fa-link"></i>
+                <span>{{ basics.url | remove: 'https://' }}</span>
+              </a>
+            {% endif %}
+          </div>
+        </div>
       {% endif %}
 
       {% if site.data.cv.education %}
-      <div class="cv-section mb-5">
-        <h3 class="mb-4 font-weight-bold">Education</h3>
+        <section class="cv-section mb-5">
+          <h2 id="education" class="cv-section-title">Education</h2>
+          <div class="cv-entries">
+            {% for edu in site.data.cv.education %}
+              <div class="cv-card">
+                <div class="cv-card-header">
+                  <div class="cv-card-left">
+                    <div class="cv-card-title-line">
+                      {% if edu.url %}
+                        <a href="{{ edu.url }}" target="_blank" rel="noopener noreferrer" class="cv-institution">{{ edu.institution }}</a>
+                      {% else %}
+                        <span class="cv-institution">{{ edu.institution }}</span>
+                      {% endif %}
+                    </div>
+                    <div class="cv-card-subtitle">
+                      {% if edu.studyType %}
+                        <span class="cv-degree-badge">{{ edu.studyType }}</span>
+                      {% endif %}
+                      {% if edu.department %}
+                        {% if edu.departmentUrl %}
+                          <a href="{{ edu.departmentUrl }}" target="_blank" rel="noopener noreferrer" class="cv-department">{{ edu.department }}</a>
+                        {% else %}
+                          <span class="cv-department">{{ edu.department }}</span>
+                        {% endif %}
+                      {% endif %}
+                      {% if edu.location %}
+                        <span class="cv-location"><i class="fa-solid fa-location-dot"></i> {{ edu.location }}</span>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="cv-card-date">
+                    {% assign start_str = edu.startDate | date: "%Y.%m" | default: "" %}
+                    {% assign end_lc = edu.endDate | downcase | default: "" %}
+                    {% if edu.endDate %}
+                      {% if end_lc == "present" %}
+                        {% assign end_str = "Present" %}
+                      {% else %}
+                        {% assign end_str = edu.endDate | date: "%Y.%m" | default: "" %}
+                      {% endif %}
+                    {% else %}
+                      {% assign end_str = "" %}
+                    {% endif %}
+                    {% if start_str != "" and end_str != "" %}
+                      {{ start_str }} &ndash; {{ end_str }}
+                    {% elsif start_str != "" %}
+                      {{ start_str }}
+                    {% elsif end_str != "" %}
+                      {{ end_str }}
+                    {% endif %}
+                  </div>
+                </div>
 
-        {% for edu in site.data.cv.education %}
-        <div class="row mb-3">
-          <div class="col-md-2 col-sm-3 text-md-left text-muted font-weight-light"
-            style="font-size: 0.9rem; min-width: 100px;">
-            {% if edu.endDate == "Present" or edu.endDate == "present" %}
-            {{ edu.startDate | date: "%Y" }} – Present
-            {% else %}
-            {{ edu.startDate | date: "%Y" }} – {{ edu.endDate | date: "%Y" }}
+                <div class="cv-card-body">
+                  <div class="cv-details">
+                    {% if edu.major %}
+                      <div class="cv-detail-row">
+                        <span class="cv-detail-label">Major</span>
+                        <span class="cv-detail-value">{{ edu.major }}</span>
+                      </div>
+                    {% endif %}
+                    {% if edu.fields and edu.fields.size > 0 %}
+                      <div class="cv-detail-row">
+                        <span class="cv-detail-label">Fields</span>
+                        <span class="cv-detail-value">{{ edu.fields | join: ", " }}</span>
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+
+      {% if site.data.cv.research_interests and site.data.cv.research_interests.size > 0 %}
+        <section class="cv-section mb-5">
+          <h2 id="research-interests" class="cv-section-title">Research Interests</h2>
+          <div class="cv-tags">
+            {% for interest in site.data.cv.research_interests %}
+              <span class="cv-tag">{{ interest }}</span>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+
+      {% if site.data.cv.skills %}
+        <section class="cv-section mb-5">
+          <h2 id="skills" class="cv-section-title">Skills</h2>
+          <div class="cv-skills">
+            {% if site.data.cv.skills.programming and site.data.cv.skills.programming.size > 0 %}
+              <div class="cv-skill-row">
+                <span class="cv-skill-label">Programming</span>
+                <span class="cv-skill-value">{{ site.data.cv.skills.programming | join: ", " }}</span>
+              </div>
+            {% endif %}
+            {% if site.data.cv.skills.other and site.data.cv.skills.other.size > 0 %}
+              <div class="cv-skill-row">
+                <span class="cv-skill-label">Other</span>
+                <span class="cv-skill-value">{{ site.data.cv.skills.other | join: ", " }}</span>
+              </div>
             {% endif %}
           </div>
-
-          <div class="col-md-10 col-sm-9">
-            <div class="font-weight-bold">
-              {{ edu.institution }}
-            </div>
-            <div class="font-italic">
-              {{ edu.studyType }} in {{ edu.area }}
-            </div>
-            <div class="text-muted small">
-              {{ edu.location }}
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
+        </section>
       {% endif %}
 
       {% if site.data.cv.languages %}
-      <div class="cv-section mb-5">
-        <h3 class="mb-4 font-weight-bold">Languages</h3>
-        <ul class="list-unstyled">
-          {% for lang in site.data.cv.languages %}
-          <li class="mb-1">
-            <span class="font-weight-bold">{{ lang.language }}:</span>
-            <span class="font-weight-light">{{ lang.fluency }}</span>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
+        <section class="cv-section mb-5">
+          <h2 id="languages" class="cv-section-title">Languages</h2>
+          <div class="cv-inline-list">
+            {% for lang in site.data.cv.languages %}
+              <span class="cv-inline-item">
+                <span class="cv-inline-key">{{ lang.language }}</span>
+                {% if lang.fluency %}
+                  <span class="cv-inline-val">({{ lang.fluency }})</span>
+                {% endif %}
+              </span>
+              {% unless forloop.last %}<span class="cv-sep">·</span>{% endunless %}
+            {% endfor %}
+          </div>
+        </section>
       {% endif %}
-
     </div>
   </article>
 </div>

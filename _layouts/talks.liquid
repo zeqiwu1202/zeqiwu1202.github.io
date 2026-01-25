@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+<div class="post">
+  <article>
+    <div class="talks">
+      <header class="talks-page-header">
+        <h1 class="talks-page-title">{{ page.title }}</h1>
+        {% if page.description and page.description != "" %}
+          <p class="talks-description">{{ page.description }}</p>
+        {% endif %}
+      </header>
+
+      {% if site.data.talks.talks %}
+        <div class="talks-list">
+          {% for talk in site.data.talks.talks %}
+            <div class="talk-card">
+              <div class="talk-card-header">
+                <div class="talk-card-left">
+                  <div class="talk-title">{{ talk.title }}</div>
+                  {% if talk.location %}
+                    <div class="talk-location">
+                      <i class="fa-solid fa-location-dot"></i>
+                      {{ talk.location }}
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="talk-date">
+                  {{ talk.date | date: "%b %Y" }}
+                </div>
+              </div>
+              {% if talk.slides or talk.video or talk.abstract %}
+                <div class="talk-links">
+                  {% if talk.slides %}
+                    <a href="{{ talk.slides | relative_url }}" target="_blank" rel="noopener noreferrer" class="talk-link-btn">
+                      <i class="fa-solid fa-file-pdf"></i> Slides
+                    </a>
+                  {% endif %}
+                  {% if talk.video %}
+                    <a href="{{ talk.video }}" target="_blank" rel="noopener noreferrer" class="talk-link-btn">
+                      <i class="fa-solid fa-video"></i> Video
+                    </a>
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </article>
+</div>

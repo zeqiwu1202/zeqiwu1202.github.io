@@ -38,6 +38,328 @@ a.btncv:hover {
   text-decoration: none !important;
 }
 
+/*
+ * Minimal academic CV layout helpers
+ * (Used by _layouts/cv.liquid)
+ */
+
+.cv {
+  font-family: $font-family-sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Page title inside CV container */
+.cv-page-header {
+  margin-bottom: 1.5rem;
+}
+
+.cv-page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cv-pdf-link {
+  color: var(--global-theme-color);
+  font-size: 1.5rem;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.cv-pdf-link:hover {
+  opacity: 1;
+}
+
+.cv-header {
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--global-theme-color);
+}
+
+.cv-name {
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.75rem;
+}
+
+.cv-contact-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cv-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--global-text-color);
+  text-decoration: none;
+  font-size: 0.92rem;
+  opacity: 0.85;
+  transition: all 0.2s ease;
+}
+
+.cv-contact-link i {
+  color: var(--global-theme-color);
+  font-size: 0.95rem;
+}
+
+.cv-contact-link:hover {
+  opacity: 1;
+  color: var(--global-theme-color);
+}
+
+.cv-section-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Card-based Education entries */
+.cv-card {
+  position: relative;
+  padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  background: var(--global-bg-color);
+  border-left: 3px solid var(--global-theme-color);
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease;
+}
+
+.cv-card:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.cv-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.cv-card-left {
+  flex: 1;
+}
+
+.cv-card-title-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.cv-institution {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--global-text-color);
+  text-decoration: none;
+}
+
+a.cv-institution:hover {
+  color: var(--global-theme-color);
+}
+
+.cv-card-date {
+  font-size: 0.88rem;
+  color: var(--global-text-color);
+  opacity: 0.75;
+  white-space: nowrap;
+  text-align: right;
+  padding-top: 0.15rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.cv-card-subtitle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.cv-degree-badge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--global-theme-color);
+  background: rgba(var(--global-theme-color-rgb, 0, 123, 255), 0.1);
+  border: 1px solid var(--global-theme-color);
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.cv-department {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--global-text-color);
+  opacity: 0.85;
+  text-decoration: none;
+}
+
+a.cv-department:hover {
+  color: var(--global-theme-color);
+  opacity: 1;
+}
+
+.cv-location {
+  font-size: 0.88rem;
+  color: var(--global-text-color);
+  opacity: 0.7;
+}
+
+.cv-location i {
+  font-size: 0.78rem;
+  margin-right: 0.25rem;
+  opacity: 0.8;
+}
+
+.cv-sep-dot {
+  padding: 0 0.3rem;
+  opacity: 0.5;
+}
+
+.cv-card-body {
+  display: block;
+}
+
+.cv-badge {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--global-theme-color);
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.cv-details {
+  width: 100%;
+}
+
+.cv-detail-row {
+  display: flex;
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+.cv-detail-label {
+  font-weight: 600;
+  color: var(--global-text-color);
+  opacity: 0.8;
+  min-width: 55px;
+  margin-right: 0.75rem;
+}
+
+.cv-detail-label::after {
+  content: ":";
+}
+
+.cv-detail-value {
+  color: var(--global-text-color);
+}
+
+/* Research Interests tags */
+.cv-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cv-tag {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--global-theme-color);
+  background: rgba(var(--global-theme-color-rgb, 0, 123, 255), 0.1);
+  border: 1px solid var(--global-theme-color);
+  border-radius: 20px;
+}
+
+/* Skills section */
+.cv-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cv-skill-row {
+  display: flex;
+  font-size: 0.98rem;
+}
+
+.cv-skill-label {
+  font-weight: 600;
+  min-width: 120px;
+  color: var(--global-text-color);
+}
+
+.cv-skill-label::after {
+  content: ":";
+  margin-right: 0.5rem;
+}
+
+.cv-skill-value {
+  color: var(--global-text-color);
+}
+
+.cv-institution {
+  color: var(--global-text-color);
+  text-decoration: none;
+}
+
+.cv-institution:hover {
+  color: var(--global-theme-color);
+  text-decoration: none;
+}
+
+/* Languages section */
+.cv-inline-list {
+  font-size: 0.98rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.cv-inline-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.cv-inline-key {
+  font-weight: 600;
+}
+
+.cv-inline-val {
+  opacity: 0.75;
+  margin-left: 0.25rem;
+}
+
+.cv-sep {
+  padding: 0 0.4rem;
+  opacity: 0.5;
+}
+
 /*****************************
  * CV TIME_TABLE styles
  *****************************/
@@ -218,3 +540,124 @@ ul.timeline li::before {
      color: var(--global-text-color);
 }
 */
+
+/*****************************
+ * Talks page styles
+ *****************************/
+
+.talks {
+  font-family: $font-family-sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.talks-page-header {
+  margin-bottom: 2rem;
+}
+
+.talks-page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.talks-description {
+  margin-top: 0.5rem;
+  color: var(--global-text-color);
+  opacity: 0.8;
+}
+
+.talks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.talk-card {
+  position: relative;
+  padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  background: var(--global-bg-color);
+  border-left: 3px solid var(--global-theme-color);
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease;
+}
+
+.talk-card:hover {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.talk-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.talk-card-left {
+  flex: 1;
+}
+
+.talk-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--global-text-color);
+  line-height: 1.4;
+}
+
+.talk-location {
+  font-size: 0.88rem;
+  color: var(--global-text-color);
+  opacity: 0.7;
+  margin-top: 0.3rem;
+}
+
+.talk-location i {
+  font-size: 0.78rem;
+  margin-right: 0.25rem;
+  color: var(--global-theme-color);
+  opacity: 0.8;
+}
+
+.talk-date {
+  font-size: 0.88rem;
+  color: var(--global-text-color);
+  opacity: 0.75;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.talk-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.talk-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--global-theme-color);
+  background: rgba(var(--global-theme-color-rgb, 0, 123, 255), 0.1);
+  border: 1px solid var(--global-theme-color);
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.talk-link-btn:hover {
+  background: var(--global-theme-color);
+  color: #fff;
+}
+
+.talk-link-btn i {
+  font-size: 0.72rem;
+}

@@ -1,30 +1,45 @@
 basics:
-  name: xxxx
-  email: xxxxx@xxx.edu.cn
-  url: https://xxxxx.github.io
+  name: Zeqi Wu
+  email: wuzeqi@ruc.edu.cn
+  url: https://zeqiwu.com
 
 education:
-  - institution: School of Management and Economics, the Chinese University of Hong Kong, Shenzhen
+  - institution: The Chinese University of Hong Kong, Shenzhen
+    department: School of Management and Economics
+    departmentUrl: https://sme.cuhk.edu.cn/
     location: Shenzhen, China
-    url: https://sme.cuhk.edu.cn/
-    area: Economics, Econometrics
-    studyType: Visiting PhD
+    url: https://www.cuhk.edu.cn/
+    studyType: Visiting Ph.D. Student
+    major: Economics
+    fields:
+      - Econometrics
+      - Economics
     startDate: 2025-06-15
     endDate: Present
   
   - institution: Renmin University of China
+    department: Institute of Statistics and Big Data
+    departmentUrl: https://isbd.ruc.edu.cn/
     location: Beijing, China
     url: https://www.ruc.edu.cn/
-    area: Econometrics, Statistics
-    studyType: PhD
+    studyType: Ph.D. Candidate
+    major: Statistics
+    fields:
+      - Econometrics
+      - Statistics
     startDate: 2023-09-01
     endDate: Present
 
   - institution: Xiamen University
+    department: School of Economics
+    departmentUrl: https://soe.xmu.edu.cn/
     location: Xiamen, China
     url: https://www.xmu.edu.cn/
-    area: Econometrics, Statistics
-    studyType: Undergraduate Student
+    studyType: B.A.
+    major: Statistics
+    fields:
+      - Econometrics
+      - Statistics
     startDate: 2019-09-01
     endDate: 2023-06-30
 
@@ -33,3 +48,19 @@ languages:
     fluency: Native speaker
   - language: English
     fluency: Fluent
+
+research_interests:
+  - Econometrics
+  - Causal Inference
+  - Machine Learning
+  - Spatial and Network Econometrics
+  - Semi/Nonparametric Methods
+
+skills:
+  programming:
+    - Python
+    - R
+    - Matlab
+  other:
+    - LaTeX
+    - LyX
