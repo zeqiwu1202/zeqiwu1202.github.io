@@ -45,7 +45,7 @@ a.btncv:hover {
 
 .cv {
   font-family: $font-family-sans-serif;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.6;
   max-width: 800px;
   margin-left: auto;
@@ -132,15 +132,16 @@ a.btncv:hover {
   position: relative;
   padding: 1.25rem 1.25rem 1.25rem 1.5rem;
   margin-bottom: 1.25rem;
-  background: var(--global-bg-color);
+  background-color: var(--global-bg-color);
   border-left: 3px solid var(--global-theme-color);
   border-radius: 0 4px 4px 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .cv-card:hover {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  background-color: rgba(var(--global-theme-color-rgb, 0, 123, 255), var(--global-hover-tint-alpha, 0.02));
 }
 
 .cv-card-header {
@@ -190,6 +191,10 @@ a.cv-institution:hover {
   align-items: center;
   gap: 0.6rem;
   margin-top: 0.4rem;
+}
+
+.cv-degree-row {
+  margin-bottom: 0.25rem;
 }
 
 .cv-degree-badge {
@@ -337,8 +342,9 @@ a.cv-department:hover {
 .cv-inline-list {
   font-size: 0.98rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.25rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
 }
 
 .cv-inline-item {
@@ -356,8 +362,9 @@ a.cv-department:hover {
 }
 
 .cv-sep {
-  padding: 0 0.4rem;
-  opacity: 0.5;
+  padding: 0 0.45rem;
+  font-size: 1.05rem;
+  opacity: 0.7;
 }
 
 /*****************************
@@ -547,7 +554,7 @@ ul.timeline li::before {
 
 .talks {
   font-family: $font-family-sans-serif;
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.6;
   max-width: 800px;
   margin-left: auto;
@@ -580,15 +587,16 @@ ul.timeline li::before {
   position: relative;
   padding: 1.25rem 1.25rem 1.25rem 1.5rem;
   margin-bottom: 1rem;
-  background: var(--global-bg-color);
+  background-color: var(--global-bg-color);
   border-left: 3px solid var(--global-theme-color);
   border-radius: 0 4px 4px 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
 }
 
 .talk-card:hover {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+  background-color: rgba(var(--global-theme-color-rgb, 0, 123, 255), var(--global-hover-tint-alpha, 0.02));
 }
 
 .talk-card-header {
@@ -604,7 +612,7 @@ ul.timeline li::before {
 
 .talk-title {
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   color: var(--global-text-color);
   line-height: 1.4;
 }
@@ -658,6 +666,7 @@ ul.timeline li::before {
   border-color: var(--global-theme-color);
   color: #fff;
   transform: translateY(-2px);
+  text-decoration: none;
 }
 
 .talk-link-btn i {

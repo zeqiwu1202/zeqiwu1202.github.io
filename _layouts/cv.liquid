@@ -49,6 +49,11 @@ layout: default
               <div class="cv-card">
                 <div class="cv-card-header">
                   <div class="cv-card-left">
+                      {% if edu.studyType %}
+                        <div class="cv-degree-row">
+                          <span class="cv-degree-badge">{{ edu.studyType }}</span>
+                        </div>
+                      {% endif %}
                     <div class="cv-card-title-line">
                       {% if edu.url %}
                         <a href="{{ edu.url }}" target="_blank" rel="noopener noreferrer" class="cv-institution">{{ edu.institution }}</a>
@@ -57,9 +62,6 @@ layout: default
                       {% endif %}
                     </div>
                     <div class="cv-card-subtitle">
-                      {% if edu.studyType %}
-                        <span class="cv-degree-badge">{{ edu.studyType }}</span>
-                      {% endif %}
                       {% if edu.department %}
                         {% if edu.departmentUrl %}
                           <a href="{{ edu.departmentUrl }}" target="_blank" rel="noopener noreferrer" class="cv-department">{{ edu.department }}</a>
@@ -158,7 +160,6 @@ layout: default
                   <span class="cv-inline-val">({{ lang.fluency }})</span>
                 {% endif %}
               </span>
-              {% unless forloop.last %}<span class="cv-sep">·</span>{% endunless %}
             {% endfor %}
           </div>
         </section>
