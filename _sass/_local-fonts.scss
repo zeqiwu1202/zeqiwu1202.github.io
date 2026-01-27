@@ -1,0 +1,28 @@
+/*******************************************************************************
+ * Locally hosted fonts (performance & reliability).
+ *
+ * We self-host the navbar brand Latin subset to avoid slow/blocked Google Fonts
+ * fetches, while keeping the exact same font family in CSS.
+ ******************************************************************************/
+
+/* Cinzel - latin subset, weight 600 (used by `.navbar-brand.title`). */
+@font-face {
+  font-family: "Cinzel";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/cinzel-latin-600.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Noto Serif SC - tiny subset for "吴泽齐", weight 600 (navbar brand CJK). */
+@font-face {
+  font-family: "Noto Serif SC";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/noto-serif-sc-subset-wuzeqi-600.woff2") format("woff2");
+  unicode-range: U+5434, U+6CFD, U+9F50;
+}
