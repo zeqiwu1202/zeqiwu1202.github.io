@@ -1,4 +1,20 @@
 $(document).ready(function () {
+  if (document.fonts && document.fonts.load) {
+    const fontPromises = [
+      document.fonts.load('1em "Font Awesome 6 Free"'),
+      document.fonts.load('1em "Font Awesome 6 Brands"'),
+      document.fonts.load('1em "tabler-icons"'),
+      document.fonts.load('1em "Academicons"'),
+      document.fonts.load('1em "Scholar Icons"'),
+    ];
+
+    Promise.allSettled(fontPromises).then(function () {
+      document.documentElement.classList.add("icon-fonts-loaded");
+    });
+  } else {
+    document.documentElement.classList.add("icon-fonts-loaded");
+  }
+
   // add toggle functionality to abstract, award and bibtex buttons
   $("a.abstract").click(function () {
     $(this).parent().parent().find(".abstract.hidden").toggleClass("open");
