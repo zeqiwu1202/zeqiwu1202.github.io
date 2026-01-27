@@ -11,15 +11,18 @@ body {
   font-family: $font-family-sans-serif;
 }
 
-/* Hide icon glyphs until icon fonts are loaded to avoid tofu boxes */
-html:not(.icon-fonts-loaded) .fa,
-html:not(.icon-fonts-loaded) .fas,
-html:not(.icon-fonts-loaded) .far,
-html:not(.icon-fonts-loaded) .fab,
-html:not(.icon-fonts-loaded) .fa-solid,
-html:not(.icon-fonts-loaded) .fa-regular,
-html:not(.icon-fonts-loaded) .fa-brands,
-html:not(.icon-fonts-loaded) .ai {
+/* Hide icon glyphs until their fonts are loaded to avoid tofu boxes */
+html:not(.fa-loaded) .fa,
+html:not(.fa-loaded) .fas,
+html:not(.fa-loaded) .far,
+html:not(.fa-loaded) .fab,
+html:not(.fa-loaded) .fa-solid,
+html:not(.fa-loaded) .fa-regular,
+html:not(.fa-loaded) .fa-brands {
+  visibility: hidden;
+}
+
+html:not(.ai-loaded) .ai {
   visibility: hidden;
 }
 
