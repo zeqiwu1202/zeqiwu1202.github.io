@@ -11,6 +11,20 @@ body {
   font-family: $font-family-sans-serif;
 }
 
+/* Hide icon glyphs until icon fonts are loaded to avoid tofu boxes */
+html:not(.icon-fonts-loaded) .fa,
+html:not(.icon-fonts-loaded) .fas,
+html:not(.icon-fonts-loaded) .far,
+html:not(.icon-fonts-loaded) .fab,
+html:not(.icon-fonts-loaded) .fa-solid,
+html:not(.icon-fonts-loaded) .fa-regular,
+html:not(.icon-fonts-loaded) .fa-brands,
+html:not(.icon-fonts-loaded) .ti,
+html:not(.icon-fonts-loaded) .ai,
+html:not(.icon-fonts-loaded) .si {
+  visibility: hidden;
+}
+
 p, li {
 
   line-height: 1.6; 
