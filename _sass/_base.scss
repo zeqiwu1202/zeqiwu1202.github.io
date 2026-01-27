@@ -12,13 +12,13 @@ body {
 }
 
 /* Hide icon glyphs until their fonts are loaded to avoid tofu boxes */
-html:not(.fa-loaded) .fa,
-html:not(.fa-loaded) .fas,
-html:not(.fa-loaded) .far,
-html:not(.fa-loaded) .fab,
-html:not(.fa-loaded) .fa-solid,
-html:not(.fa-loaded) .fa-regular,
-html:not(.fa-loaded) .fa-brands {
+html:not(.fa-solid-loaded) .fas,
+html:not(.fa-solid-loaded) .fa-solid {
+  visibility: hidden;
+}
+
+html:not(.fa-brands-loaded) .fab,
+html:not(.fa-brands-loaded) .fa-brands {
   visibility: hidden;
 }
 
@@ -988,6 +988,12 @@ footer.sticky-bottom {
         -ms-transition: 0.15s ease;
         -o-transition: 0.15s ease;
         transition: all 0.15s ease;
+        border: 1.5px solid transparent;
+        outline: 1px solid transparent;
+        background-color: transparent;
+        border-radius: 6px;
+        padding: 0 10px;
+        margin-top: 8px;
 
         p {
           line-height: 1.4em;
@@ -1008,21 +1014,20 @@ footer.sticky-bottom {
         -ms-transition: 0.15s ease;
         -o-transition: 0.15s ease;
         transition: all 0.15s ease;
-      }
+        background-color: transparent;
+        border-color: rgba(0, 0, 0, 0.35);
+        outline-color: transparent;
+        box-shadow: none;
+        border-radius: 10px;
+        padding: 5px 10px;
 
-      div.abstract.hidden {
-        border: dashed 1px var(--global-bg-color);
+        html[data-theme="dark"] & {
+          background-color: transparent;
+          border-color: rgba(255, 255, 255, 0.7);
+          box-shadow: none;
+          border-radius: 10px;
+        }
       }
-
-      div.abstract.hidden.open {
-        border-color: var(--global-text-color);
-      }
-    }
-    div.award.hidden {
-      border: dashed 1px var(--global-bg-color);
-    }
-    div.award.hidden.open {
-      border-color: var(--global-highlight-color);
     }
   }
 }

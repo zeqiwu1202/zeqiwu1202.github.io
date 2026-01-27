@@ -22,10 +22,49 @@
 {% endif %}
 
 <!-- Fonts & Icons -->
-<link rel="preload" href="{{ '/assets/webfonts/fa-solid-900.woff2' | relative_url | bust_file_cache }}" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{{ '/assets/webfonts/fa-regular-400.woff2' | relative_url | bust_file_cache }}" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{{ '/assets/webfonts/fa-brands-400.woff2' | relative_url | bust_file_cache }}" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{{ '/assets/fonts/academicons.woff' | relative_url | bust_file_cache }}" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="{{ '/assets/webfonts/fa-solid-900.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/webfonts/fa-brands-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/academicons.woff' | relative_url }}" as="font" type="font/woff" crossorigin>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    var markLoaded = function (key, cls) {
+      try {
+        sessionStorage.setItem(key, "1");
+      } catch (e) {}
+      root.classList.add(cls);
+    };
+
+    var ensureFont = function (key, cls, font) {
+      try {
+        if (sessionStorage.getItem(key) === "1") {
+          root.classList.add(cls);
+          return;
+        }
+      } catch (e) {}
+
+      if (document.fonts && document.fonts.check && document.fonts.check(font)) {
+        markLoaded(key, cls);
+        return;
+      }
+
+      if (document.fonts && document.fonts.load) {
+        document.fonts.load(font).then(function () {
+          markLoaded(key, cls);
+        });
+        return;
+      }
+
+      // No Font Loading API: don't block icons from showing.
+      root.classList.add(cls);
+    };
+
+    ensureFont("fa-solid-loaded", "fa-solid-loaded", '900 1em "Font Awesome 6 Free"');
+    ensureFont("fa-brands-loaded", "fa-brands-loaded", '400 1em "Font Awesome 6 Brands"');
+    ensureFont("ai-loaded", "ai-loaded", '400 1em "Academicons"');
+  })();
+</script>
 <link defer rel="stylesheet" href="{{ '/assets/css/academicons.min.css' | relative_url | bust_file_cache }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
