@@ -1,16 +1,39 @@
 $(document).ready(function () {
-  if (document.fonts && document.fonts.load) {
-    const fontPromises = [
-      document.fonts.load('1em "Font Awesome 6 Free"'),
-      document.fonts.load('1em "Font Awesome 6 Brands"'),
-      document.fonts.load('1em "Academicons"'),
-    ];
+  const root = document.documentElement;
+  const markLoaded = function (key, cls) {
+    try {
+      sessionStorage.setItem(key, "1");
+    } catch (e) {}
+    root.classList.add(cls);
+  };
 
-    Promise.allSettled(fontPromises).then(function () {
-      document.documentElement.classList.add("icon-fonts-loaded");
-    });
+  const maybeRestore = function (key, cls) {
+    try {
+      if (sessionStorage.getItem(key) === "1") {
+        root.classList.add(cls);
+        return true;
+      }
+    } catch (e) {}
+    return false;
+  };
+
+  if (document.fonts && document.fonts.load) {
+    if (!maybeRestore("fa-loaded", "fa-loaded")) {
+      document.fonts.load('1em "Font Awesome 6 Free"').then(function () {
+        markLoaded("fa-loaded", "fa-loaded");
+      });
+      document.fonts.load('1em "Font Awesome 6 Brands"').then(function () {
+        markLoaded("fa-loaded", "fa-loaded");
+      });
+    }
+
+    if (!maybeRestore("ai-loaded", "ai-loaded")) {
+      document.fonts.load('1em "Academicons"').then(function () {
+        markLoaded("ai-loaded", "ai-loaded");
+      });
+    }
   } else {
-    document.documentElement.classList.add("icon-fonts-loaded");
+    root.classList.add("fa-loaded", "ai-loaded");
   }
 
   // add toggle functionality to abstract, award and bibtex buttons
