@@ -299,6 +299,12 @@ a.cv-department:hover {
   background: rgba(var(--global-theme-color-rgb, 0, 123, 255), 0.1);
   border: 1px solid var(--global-theme-color);
   border-radius: 20px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cv-tag:hover {
+  background-color: rgba(var(--global-theme-color-rgb, 0, 123, 255), var(--global-hover-tint-alpha, 0.02));
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
 /* Skills section */
