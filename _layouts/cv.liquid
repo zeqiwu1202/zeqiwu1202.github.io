@@ -149,6 +149,18 @@ layout: default
         </section>
       {% endif %}
 
+      {% if site.data.cv.service and site.data.cv.service.journal_refereeing and site.data.cv.service.journal_refereeing.size > 0 %}
+        <section class="cv-section mb-5">
+          <h2 id="service" class="cv-section-title">Professional Service</h2>
+          <div class="cv-skills">
+            <div class="cv-skill-row">
+              <span class="cv-skill-label">Journal Referee</span>
+              <span class="cv-skill-value">{{ site.data.cv.service.journal_refereeing | join: ", " }}</span>
+            </div>
+          </div>
+        </section>
+      {% endif %}
+
       {% if site.data.cv.languages %}
         <section class="cv-section mb-5">
           <h2 id="languages" class="cv-section-title">Languages</h2>
