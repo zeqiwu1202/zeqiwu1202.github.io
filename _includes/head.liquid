@@ -22,8 +22,11 @@
 {% endif %}
 
 <!-- Fonts & Icons -->
+<link rel="preload" href="{{ '/assets/webfonts/fa-solid-900.woff2' | relative_url | bust_file_cache }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/webfonts/fa-regular-400.woff2' | relative_url | bust_file_cache }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/webfonts/fa-brands-400.woff2' | relative_url | bust_file_cache }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/academicons.woff' | relative_url | bust_file_cache }}" as="font" type="font/woff" crossorigin>
 <link defer rel="stylesheet" href="{{ '/assets/css/academicons.min.css' | relative_url | bust_file_cache }}">
-<link defer rel="stylesheet" href="{{ '/assets/css/scholar-icons.css' | relative_url | bust_file_cache }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link

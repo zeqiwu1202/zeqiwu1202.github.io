@@ -3,9 +3,7 @@ $(document).ready(function () {
     const fontPromises = [
       document.fonts.load('1em "Font Awesome 6 Free"'),
       document.fonts.load('1em "Font Awesome 6 Brands"'),
-      document.fonts.load('1em "tabler-icons"'),
       document.fonts.load('1em "Academicons"'),
-      document.fonts.load('1em "Scholar Icons"'),
     ];
 
     Promise.allSettled(fontPromises).then(function () {
