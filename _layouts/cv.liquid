@@ -129,6 +129,18 @@ layout: default
         </section>
       {% endif %}
 
+      {% if site.data.cv.service and site.data.cv.service.journal_refereeing and site.data.cv.service.journal_refereeing.size > 0 %}
+        <section class="cv-section mb-5">
+          <h2 id="service" class="cv-section-title">Professional Service</h2>
+          <div class="cv-skills">
+            <div class="cv-skill-row">
+              <span class="cv-skill-label">Journal Referee</span>
+              <span class="cv-skill-value">{{ site.data.cv.service.journal_refereeing | join: ", " }}</span>
+            </div>
+          </div>
+        </section>
+      {% endif %}
+
       {% if site.data.cv.skills %}
         <section class="cv-section mb-5">
           <h2 id="skills" class="cv-section-title">Skills</h2>
@@ -145,18 +157,6 @@ layout: default
                 <span class="cv-skill-value">{{ site.data.cv.skills.other | join: ", " }}</span>
               </div>
             {% endif %}
-          </div>
-        </section>
-      {% endif %}
-
-      {% if site.data.cv.service and site.data.cv.service.journal_refereeing and site.data.cv.service.journal_refereeing.size > 0 %}
-        <section class="cv-section mb-5">
-          <h2 id="service" class="cv-section-title">Professional Service</h2>
-          <div class="cv-skills">
-            <div class="cv-skill-row">
-              <span class="cv-skill-label">Journal Referee</span>
-              <span class="cv-skill-value">{{ site.data.cv.service.journal_refereeing | join: ", " }}</span>
-            </div>
           </div>
         </section>
       {% endif %}
