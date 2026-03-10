@@ -220,7 +220,7 @@
       {% endif %}
 
       {% if entry.code %}
-        {% capture link_item %}<a href="{{ entry.code }}" class="btn btn-academic-blue btn-sm rounded-pill" target="_blank" rel="noopener noreferrer" role="button" style="text-transform: none;"><i class="fa-solid fa-code mr-1"></i> Code</a>{% endcapture %}
+        {% capture link_item %}<a href="{{ entry.code }}" class="btn btn-academic-blue btn-sm rounded-pill" target="_blank" rel="noopener noreferrer" role="button" style="text-transform: none;"><i class="fas fa-code mr-1"></i> Code</a>{% endcapture %}
         {% assign link_items = link_items | append: link_item | append: '|||' %}
       {% endif %}
 
