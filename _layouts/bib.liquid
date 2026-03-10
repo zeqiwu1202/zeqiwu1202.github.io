@@ -220,7 +220,7 @@
       {% endif %}
 
       {% if entry.code %}
-        {% capture link_item %}<a href="{{ entry.code }}" class="btn btn-academic-blue btn-sm rounded-pill" target="_blank" rel="noopener noreferrer" role="button" style="text-transform: none;">Code</a>{% endcapture %}
+        {% capture link_item %}<a href="{{ entry.code }}" class="btn btn-academic-blue btn-sm rounded-pill" target="_blank" rel="noopener noreferrer" role="button" style="text-transform: none;"><i class="fas fa-code mr-1"></i> Code</a>{% endcapture %}
         {% assign link_items = link_items | append: link_item | append: '|||' %}
       {% endif %}
 
@@ -284,31 +284,11 @@
       {% endif %}
 
       {% assign link_list = link_items | split: '|||' %}
-      {% assign visible_count = 0 %}
-      {% assign hidden_items = '' %}
       {% for link_item in link_list %}
         {% unless link_item == '' %}
-          {% if visible_count < 3 %}
-            {{ link_item }}
-            {% assign visible_count = visible_count | plus: 1 %}
-          {% else %}
-            {% assign hidden_items = hidden_items | append: link_item | append: '|||' %}
-          {% endif %}
+          {{ link_item }}
         {% endunless %}
       {% endfor %}
-
-      {% unless hidden_items == '' %}
-        {% assign more_links_id = 'more-links-' | append: entry.key %}
-        <a class="btn btn-academic-blue btn-sm rounded-pill" role="button" style="text-transform: none;" onclick="var c=document.getElementById('{{ more_links_id }}'); var hidden=(c.style.display==='none' || c.style.display===''); c.style.display=hidden?'inline':'none'; this.textContent=hidden?'Less':'More';">More</a>
-        <span id="{{ more_links_id }}" style="display: none;">
-          {% assign hidden_list = hidden_items | split: '|||' %}
-          {% for link_item in hidden_list %}
-            {% unless link_item == '' %}
-              {{ link_item }}
-            {% endunless %}
-          {% endfor %}
-        </span>
-      {% endunless %}
     </div>
     {% if site.enable_publication_badges %}
       {% assign entry_has_altmetric_badge = false %}
