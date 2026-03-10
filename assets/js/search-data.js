@@ -38,18 +38,11 @@ ninja.data = [{
           window.open("https://arxiv.org/a/wu_z_12.html", "_blank");
         },
       },{
-        id: 'social-cv',
-        title: 'CV',
+        id: 'social-github',
+        title: 'GitHub',
         section: 'Socials',
         handler: () => {
-          window.open("/assets/pdf/Zeqi_CV.pdf", "_blank");
-        },
-      },{
-        id: 'social-email',
-        title: 'email',
-        section: 'Socials',
-        handler: () => {
-          window.open("mailto:%77%75%7A%65%71%69@%72%75%63.%65%64%75.%63%6E", "_blank");
+          window.open("https://github.com/zeqiwu1202", "_blank");
         },
       },{
         id: 'social-orcid',
