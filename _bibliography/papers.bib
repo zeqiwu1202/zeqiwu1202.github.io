@@ -54,3 +54,16 @@ supp={FD_spatial_supp.pdf},
 abbr={Econom. Theory},
 slides={FDM_clubear.pdf}
 }
+
+@article{Ma2025Aunified,
+  title    = {Integrating Heterogeneous Information in Randomized Experiments: A Unified Calibration Framework},
+  author   = {Ma, Wei and Wu*, Zeqi and Zhang, Zheng},
+  year     = {2026},
+  month    = {March},
+  journal  = {Working Paper},
+  arxiv = {2511.17928},
+  annotation={Authors are alphabetically ordered.<br>* Corresponding authors.},
+  code = {https://github.com/zeqiwu1202/Replication-for-CAR-calibration},
+  abstract = {In modern randomized experiments, large-scale data collection increasingly yields rich baseline covariates and auxiliary information from multiple sources. Such information offers opportunities for more precise treatment effect estimation, but it also raises the challenge of integrating heterogeneous information coherently without compromising validity. Covariate-adaptive randomization (CAR) is widely used to improve covariate balance at the design stage, but it typically balances only a small set of covariates used to form strata, making covariate adjustment at the analysis stage essential for more efficient estimation of treatment effects. Beyond standard covariate adjustment, it is often desirable to incorporate auxiliary information, including cross-stratum information, predictions from various machine learning models, and external data from historical trials or real-world sources. While this auxiliary information is widely available, existing covariate adjustment methods under CAR primarily exploit within-stratum covariates and do not provide a coherent mechanism for integrating it. We propose a unified calibration framework that integrates such information through an information proxy vector and calibration weights defined by a convex optimization problem. The resulting estimator recovers many recent covariate adjustment procedures as special cases while providing a systematic mechanism for both internal and external information borrowing within a single framework. We establish large-sample validity and a no-harm efficiency guarantee, showing that incorporating additional information sources cannot increase asymptotic variance, and we extend the theory to settings in which both the number of strata and the number of information sources grow with the sample size.}
+  
+  }
