@@ -18,3 +18,5 @@ nav_order: 2
 {% bibliography %}
 
 </div>
+
+<script defer src="{{ '/assets/js/publication-year-toggle.js' | relative_url | bust_file_cache }}"></script>

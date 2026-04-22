@@ -762,7 +762,7 @@ footer.sticky-bottom {
 // Publications
 
 .publications {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 
   h1 {
     color: var(--global-theme-color);
@@ -773,37 +773,85 @@ footer.sticky-bottom {
   }
 
   h2 {
-    margin-bottom: 1rem;
+    margin: 1.75rem 0 0.8rem;
 
     span {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
   }
 
   h2.bibliography {
-    color: var(--global-divider-color);
+    color: var(--global-text-color-light);
     border-top: 1px solid var(--global-divider-color);
-    padding-top: 1rem;
-    margin-top: 2rem;
-    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.85rem 0.35rem 0 0;
+    margin-top: 1.75rem;
+    text-align: left;
+    font-family: $font-family-sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .year-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--global-text-color-light);
+    background: transparent;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    line-height: 1;
+    opacity: 0.72;
+    transition: none;
+
+    &:focus-visible {
+      outline: 2px solid var(--global-divider-color);
+      outline-offset: 2px;
+    }
+  }
+
+  .year-toggle-icon {
+    width: 0.42rem;
+    height: 0.42rem;
+    border: solid currentColor;
+    border-width: 0 1.5px 1.5px 0;
+    transform: translateY(-1px) rotate(45deg);
+    transition: transform 0.15s ease;
+  }
+
+  h2.bibliography.year-collapsed .year-toggle-icon {
+    transform: translateX(1px) rotate(-45deg);
+  }
+
+  &.is-searching ol.bibliography.year-collapsed:not(.unloaded) {
+    display: block;
   }
 
   .bibsearch-wrapper {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    max-width: 520px;
-    margin: 0 0 1.25rem;
-    padding: 0.45rem 0.85rem;
-    border: 2px solid var(--global-divider-color);
-    border-radius: 999px;
-    background: linear-gradient(120deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0));
+    max-width: 430px;
+    margin: 0 0 1.4rem;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 6px;
+    background: transparent;
     box-shadow: none;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
   }
 
   .bibsearch-wrapper:focus-within {
     border-color: var(--global-theme-color);
+    background-color: rgba(var(--global-theme-color-rgb, 0, 123, 255), 0.025);
     box-shadow: none;
   }
 
@@ -825,7 +873,7 @@ footer.sticky-bottom {
     min-width: 0;
     box-shadow: none;
     color: var(--global-text-color);
-    font-size: 0.98rem;
+    font-size: 0.95rem;
   }
 
   .bibsearch-form-input:focus {
@@ -840,6 +888,10 @@ footer.sticky-bottom {
     list-style: none;
     padding: 0;
     margin-top: 0;
+
+    &.year-collapsed {
+      display: none;
+    }
 
     li {
       margin-bottom: 1.25rem;
@@ -888,23 +940,23 @@ footer.sticky-bottom {
 
       /* Publications: strengthen title/author hierarchy */
       .paper-title {
-        font-weight: 700;
-        font-size: 1.265rem;
+        font-weight: 650;
+        font-size: 1.18rem;
         line-height: 1.35;
-        margin-bottom: 0.35rem;
+        margin-bottom: 0.25rem;
         color: var(--global-text-color);
       }
 
       .periodical {
         font-size: 1rem;
+        font-weight: 400;
         line-height: 1.35;
-        letter-spacing: 0.01em;
         color: var(--global-text-color);
       }
 
       .author {
         font-weight: 400;
-        font-size: 1.05rem;
+        font-size: 1.03rem;
         color: var(--global-text-color);
         opacity: 0.88;
         margin-bottom: 0.25rem;
@@ -941,25 +993,98 @@ footer.sticky-bottom {
       }
 
       .links {
-        a.btn {
-          color: var(--global-text-color);
-          border: 1px solid var(--global-text-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          padding-top: 0.25rem;
-          padding-bottom: 0.25rem;
-          margin-left: 0;
-          border-radius: 4px;
-          transition: all 0.2s ease;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        column-gap: 0.45rem;
+        row-gap: 0.25rem;
+        margin-top: 0.55rem;
 
-          &:hover {
-            color: #fff;
-            background-color: var(--global-theme-color);
-            border-color: var(--global-theme-color);
+        a.btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.18rem;
+          position: relative;
+          margin: 0;
+          padding: 0.02rem 0.18rem;
+          color: var(--global-text-color) !important;
+          background: transparent !important;
+          border: 0;
+          border-radius: 0 !important;
+          font-size: 0.92rem;
+          font-weight: 400;
+          line-height: 1.35;
+          box-shadow: none !important;
+          transform: none !important;
+          white-space: nowrap;
+          opacity: 1;
+          transition: color 0.15s ease, opacity 0.15s ease;
+
+          &::before {
+            content: "[";
+            color: var(--global-text-color);
+            margin-right: 0.02rem;
+            transition: color 0.15s ease;
+          }
+
+          &::after {
+            content: "]";
+            color: var(--global-text-color);
+            margin-left: 0.02rem;
+            transition: color 0.15s ease;
+          }
+
+          i {
+            color: var(--global-text-color);
+            font-size: 0.85em;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            transition: color 0.15s ease;
+          }
+
+          .abstract-icon {
+            color: var(--global-text-color);
+          }
+
+          &:hover,
+          &:focus,
+          &:active,
+          &.abs-active {
+            color: var(--global-theme-color) !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            transform: none !important;
+            text-decoration: none;
+            opacity: 1;
+          }
+
+          &:hover::before,
+          &:hover::after,
+          &:focus::before,
+          &:focus::after,
+          &:active::before,
+          &:active::after,
+          &.abs-active::before,
+          &.abs-active::after {
+            color: var(--global-theme-color);
+          }
+
+          &:hover i,
+          &:focus i,
+          &:active i,
+          &.abs-active i {
+            color: var(--global-theme-color);
+          }
+
+          &:focus-visible {
+            outline: 2px solid var(--global-divider-color);
+            outline-offset: 3px;
+            border-radius: 2px !important;
           }
         }
+
         a.award.btn {
-          border-color: var(--global-highlight-color);
+          color: var(--global-highlight-color) !important;
         }
       }
 
