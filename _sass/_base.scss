@@ -1764,17 +1764,27 @@ mjx-container[jax="CHTML"][display="true"] {
 }
 
 .author-link {
+  color: var(--global-theme-color);
   text-decoration: none;
   border-bottom: none;
   transition: color 0.15s ease;
 }
 
-.author-link:hover {
+.paper-title-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: none;
+  transition: color 0.15s ease;
+}
+
+.author-link:hover,
+.paper-title-link:hover {
   text-decoration: none;
   color: var(--global-theme-color);
 }
 
-.author-link::after {
+.author-link::after,
+.paper-title-link::after {
   content: "\f08e";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
@@ -1788,7 +1798,8 @@ mjx-container[jax="CHTML"][display="true"] {
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
-.author-link:hover::after {
+.author-link:hover::after,
+.paper-title-link:hover::after {
   opacity: 0.7;
   transform: translateX(0);
   margin-left: 0.2rem;
