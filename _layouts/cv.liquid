@@ -96,22 +96,31 @@ layout: default
                   </div>
                 </div>
 
-                <div class="cv-card-body">
-                  <div class="cv-details">
-                    {% if edu.major %}
-                      <div class="cv-detail-row">
-                        <span class="cv-detail-label">Major</span>
-                        <span class="cv-detail-value">{{ edu.major }}</span>
-                      </div>
-                    {% endif %}
-                    {% if edu.fields and edu.fields.size > 0 %}
-                      <div class="cv-detail-row">
-                        <span class="cv-detail-label">Fields</span>
-                        <span class="cv-detail-value">{{ edu.fields | join: ", " }}</span>
-                      </div>
-                    {% endif %}
+                {% assign has_education_details = false %}
+                {% if edu.major %}
+                  {% assign has_education_details = true %}
+                {% endif %}
+                {% if edu.fields and edu.fields.size > 0 %}
+                  {% assign has_education_details = true %}
+                {% endif %}
+                {% if has_education_details %}
+                  <div class="cv-card-body">
+                    <div class="cv-details">
+                      {% if edu.major %}
+                        <div class="cv-detail-row">
+                          <span class="cv-detail-label">Major</span>
+                          <span class="cv-detail-value">{{ edu.major }}</span>
+                        </div>
+                      {% endif %}
+                      {% if edu.fields and edu.fields.size > 0 %}
+                        <div class="cv-detail-row">
+                          <span class="cv-detail-label">Fields</span>
+                          <span class="cv-detail-value">{{ edu.fields | join: ", " }}</span>
+                        </div>
+                      {% endif %}
+                    </div>
                   </div>
-                </div>
+                {% endif %}
               </div>
             {% endfor %}
           </div>

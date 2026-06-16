@@ -10,10 +10,6 @@ education:
     location: Shenzhen, China
     url: https://www.cuhk.edu.cn/
     studyType: Visiting Ph.D. Student
-    major: Economics
-    fields:
-      - Econometrics
-      - Economics
     startDate: 2025-06-15
     endDate: Present
   
@@ -23,10 +19,6 @@ education:
     location: Beijing, China
     url: https://www.ruc.edu.cn/
     studyType: Ph.D. Candidate
-    major: Statistics
-    fields:
-      - Econometrics
-      - Statistics
     startDate: 2023-09-01
     endDate: Present
 
@@ -36,10 +28,6 @@ education:
     location: Xiamen, China
     url: https://www.xmu.edu.cn/
     studyType: B.A.
-    major: Statistics
-    fields:
-      - Econometrics
-      - Statistics
     startDate: 2019-09-01
     endDate: 2023-06-30
 
