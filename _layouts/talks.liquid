@@ -18,13 +18,7 @@ layout: default
             <div class="talk-card">
               <div class="talk-card-header">
                 <div class="talk-card-left">
-                  <div class="talk-title">
-                    {% if talk.url %}
-                      <a href="{{ talk.url }}" target="_blank" rel="noopener noreferrer" class="talk-title-link">{{ talk.title }}</a>
-                    {% else %}
-                      {{ talk.title }}
-                    {% endif %}
-                  </div>
+                  <div class="talk-title">{{ talk.title }}</div>
                   {% if talk.location %}
                     <div class="talk-location">
                       <i class="fa-solid fa-location-dot"></i>

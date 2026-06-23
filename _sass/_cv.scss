@@ -629,17 +629,6 @@ ul.timeline li::before {
   line-height: 1.4;
 }
 
-.talk-title-link {
-  color: inherit;
-  text-decoration: none;
-}
-
-.talk-title-link:hover,
-.talk-title-link:focus {
-  color: var(--global-theme-color);
-  text-decoration: none;
-}
-
 .talk-location {
   font-size: 0.88rem;
   color: var(--global-text-color);
