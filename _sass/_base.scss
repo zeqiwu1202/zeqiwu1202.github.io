@@ -999,7 +999,8 @@ footer.sticky-bottom {
       }
 
       .publication-date {
-        color: var(--global-text-color-light);
+        color: var(--global-text-color);
+        font-weight: 400;
         font-variant-numeric: tabular-nums;
         margin-left: 0.28rem;
         white-space: nowrap;
