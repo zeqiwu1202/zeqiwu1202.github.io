@@ -117,7 +117,7 @@
     {% unless entry.status == 'working' %}
       <div class="periodical">
         {% if entry.type == 'article' %}<em class="publication-venue">{{ entry.journal }}</em>{% endif %}
-        {% if entry.volume %}<span class="publication-citation-separator">,</span> <span class="publication-volume">{{ entry.volume }}</span>{% endif %}{% if entry.number %}({{ entry.number }}){% endif %}{% if entry.pages %}<span class="publication-citation-separator">,</span> <span class="publication-pages">{{ entry.pages | replace: '--', '–' }}</span>{% endif %}
+        {%- if entry.volume %}<span class="publication-citation-separator">,</span> <span class="publication-volume">{{ entry.volume }}</span>{% endif %}{% if entry.number %}({{ entry.number }}){% endif %}{% if entry.pages %}<span class="publication-citation-separator">,</span> <span class="publication-pages">{{ entry.pages | replace: '--', '–' }}</span>{% endif %}
         {% if entry.location %}{{ entry.location }}{% endif %}
         {% if entry.additional_info %}{{ entry.additional_info | markdownify | remove: '<p>' | remove: '</p>' }}{% endif %}
       </div>
