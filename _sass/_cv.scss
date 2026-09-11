@@ -142,8 +142,8 @@ a.btncv:hover {
 }
 
 .cv-contact-label {
-  color: var(--global-text-color-light);
-  font-weight: 500;
+  color: var(--global-text-color);
+  font-weight: 400;
 }
 
 .cv-contact-label::after {
@@ -227,7 +227,8 @@ a.cv-institution:hover {
 
 .cv-card-date {
   font-size: 1rem;
-  color: var(--global-text-color-light);
+  font-weight: 300;
+  color: var(--global-text-color);
   opacity: 1;
   white-space: nowrap;
   text-align: right;
@@ -251,8 +252,8 @@ a.cv-institution:hover {
   display: inline-block;
   padding: 0;
   font-size: 1.02rem;
-  font-weight: 500;
-  color: var(--global-text-color-light);
+  font-weight: 400;
+  color: var(--global-text-color);
   background: transparent;
   border: 0;
   border-radius: 0;
@@ -676,7 +677,8 @@ ul.timeline li::before {
 
 .talk-date {
   font-size: 1.1rem;
-  color: var(--global-text-color-light);
+  font-weight: 300;
+  color: var(--global-text-color);
   opacity: 1;
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
