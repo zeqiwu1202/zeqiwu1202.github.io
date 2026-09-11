@@ -5,6 +5,7 @@ title: Research
 description: 
 nav: true
 nav_order: 2
+compact_scale: true
 ---
 
 <!-- _pages/publications.md -->
