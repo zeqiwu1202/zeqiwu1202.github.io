@@ -252,7 +252,7 @@ a.cv-institution:hover {
   display: inline-block;
   padding: 0;
   font-size: 1.02rem;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--global-text-color);
   background: transparent;
   border: 0;
@@ -669,17 +669,15 @@ ul.timeline li::before {
   line-height: 1.4;
 }
 
-.talk-location {
-  font-size: 1.1rem;
-  color: var(--global-text-color);
-  opacity: 1;
-}
-
+.talk-location,
 .talk-date {
   font-size: 1.1rem;
   font-weight: 400;
   color: var(--global-text-color);
   opacity: 1;
+}
+
+.talk-date {
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
 }
