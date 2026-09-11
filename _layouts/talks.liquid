@@ -16,10 +16,10 @@ layout: default
         <div class="talks-list">
           {% for talk in site.data.talks.talks %}
             <div class="talk-card">
-              <div class="talk-title">{{ talk.title }}</div>
-              <div class="talk-meta">
-                {% if talk.location %}<span class="talk-location">{{ talk.location }}</span>{% endif %}
-                <span class="talk-date">{% if talk.location %}({% endif %}{{ talk.date | date: "%b %Y" }}{% if talk.location %}){% endif %}</span>
+              <div class="{% if talk.location %}talk-title{% else %}talk-title-row{% endif %}">
+                <span class="talk-title">{{ talk.title }}</span>
+                {% unless talk.location %}<span class="talk-date">({{ talk.date | date: "%b %Y" }})</span>{% endunless %}
+                {% unless talk.location %}
                 {% if talk.slides or talk.video or talk.abstract %}
                   <span class="talk-links">
                     {% if talk.slides %}
@@ -34,7 +34,14 @@ layout: default
                     {% endif %}
                   </span>
                 {% endif %}
+                {% endunless %}
               </div>
+              {% if talk.location %}
+                <div class="talk-meta">
+                  <span class="talk-location">{{ talk.location }}</span>
+                  <span class="talk-date">({{ talk.date | date: "%b %Y" }})</span>
+                </div>
+              {% endif %}
             </div>
           {% endfor %}
         </div>
