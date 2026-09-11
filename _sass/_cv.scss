@@ -747,6 +747,10 @@ ul.timeline li::before {
 }
 
 @media (max-width: 575px) {
+  .talk-title {
+    font-size: 1.2rem;
+  }
+
   .cv-card-header {
     display: block;
   }
