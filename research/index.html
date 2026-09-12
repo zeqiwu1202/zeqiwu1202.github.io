@@ -23,7 +23,11 @@
     </script>
     <link rel="preload" href="/assets/fonts/source-sans-3-latin-wght-300-700.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/cinzel-latin-600.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/assets/css/site.css?v=7">
+    <link rel="stylesheet" href="/assets/vendor/katex/katex.min.css">
+    <script defer src="/assets/vendor/katex/katex.min.js"></script>
+    <script defer src="/assets/vendor/katex/contrib/auto-render.min.js"></script>
+    <script defer src="/assets/js/math.js?v=1"></script>
+    <link rel="stylesheet" href="/assets/css/site.css?v=8">
     <script defer src="/assets/js/site.js?v=5"></script>
   </head>
   <body>
@@ -56,7 +60,7 @@
       </div>
     </header>
 
-<main class="site-main" id="main-content">
+<main class="site-main" id="main-content" data-math-content>
       <div class="site-shell">
         <header class="page-header">
           <h1 class="page-title">Research</h1>
@@ -118,7 +122,7 @@
                   we estimate using machine-learning techniques. To address bias in machine learning estimates, we introduce a novel
                   reweighting-based debiasing approach that offers a promising alternative to traditional orthogonality-based methods.
                   To tackle the complexities of infinite-dimensional policy spaces, we employ sieve approximations and
-                  <i>K</i>-fold cross-validation for model selection, thereby fully automating the policy-learning process. Despite these
+                  \(K\)-fold cross-validation for model selection, thereby fully automating the policy-learning process. Despite these
                   complexities, we demonstrate that both the welfare regret and the average welfare regret of our proposed policy
                   learning method satisfy an oracle inequality, thereby providing theoretical guarantees on the performance of the
                   estimated policy relative to the best possible policy. This finding extends the existing results from linear to
@@ -140,7 +144,7 @@
                   This paper develops limit theorems for random variables with network dependence, without requiring that individuals in
                   the network to be located in a Euclidean or metric space. This distinguishes our approach from most existing limit
                   theorems in network econometrics, which are based on weak dependence concepts such as strong mixing, near-epoch
-                  dependence, and <i>ψ</i>-dependence. By relaxing the assumption of an underlying metric space, our theorems can be
+                  dependence, and \(\psi\)-dependence. By relaxing the assumption of an underlying metric space, our theorems can be
                   applied to a broader range of network data, including financial and social networks. To derive the limit theorems, we
                   generalize the concept of functional dependence (also known as physical dependence) from time series to random
                   variables with network dependence. Using this framework, we establish several inequalities, a law of large numbers,
@@ -200,7 +204,7 @@
                   through calibration, thereby achieving debiased and robust estimation. Our method accommodates a wide range of
                   treatment models, including average, quantile, distributional, and asymmetric least squares treatment effects, for
                   discrete, continuous, and mixed treatments. Under regularity conditions, we show that our estimator achieves rate
-                  double robustness and √<i>N</i>-asymptotic normality, and its asymptotic variance achieves the semiparametric efficiency
+                  double robustness and \(\sqrt{N}\)-asymptotic normality, and its asymptotic variance achieves the semiparametric efficiency
                   bound. We further develop a statistical inference procedure based on weighted bootstrap, which avoids estimating the
                   efficient influence/score functions. Simulation results reveal that the proposed method consistently outperforms
                   existing alternatives, especially when the sample size is small. Applications to the 401(k) dataset and the Mother's
