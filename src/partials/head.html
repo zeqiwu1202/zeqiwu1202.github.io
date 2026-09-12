@@ -1,0 +1,25 @@
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{description}}">
+    <meta name="theme-color" content="#fdfdfc" data-theme-color>
+    <title>{{title}}</title>
+    <script>
+      document.documentElement.classList.add("js");
+      (function () {
+        var theme = "";
+        try {
+          var savedTheme = window.localStorage.getItem("zeqi-site-theme");
+          if (savedTheme === "light" || savedTheme === "dark") theme = savedTheme;
+        } catch (error) {}
+
+        if (theme) document.documentElement.setAttribute("data-theme", theme);
+        var initialDark = theme === "dark" || (!theme && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        if (initialDark) document.querySelector("[data-theme-color]").setAttribute("content", "#181a1d");
+      })();
+    </script>
+    <link rel="preload" href="./assets/fonts/source-sans-3-latin-wght-300-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/cinzel-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="./assets/css/site.css">
+    <script defer src="./assets/js/site.js?v=5"></script>
+  </head>
