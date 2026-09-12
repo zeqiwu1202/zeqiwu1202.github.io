@@ -459,8 +459,7 @@ summary:focus-visible {
   border-radius: 2px;
 }
 
-.hero-lead,
-.hero-copy {
+.hero-lead {
   max-width: 44rem;
   margin: 0;
   color: var(--text);
@@ -468,12 +467,8 @@ summary:focus-visible {
   line-height: 1.62;
 }
 
-.hero-copy {
-  margin: 1.2rem 0 0;
-}
-
 .home-details {
-  margin-top: 3.4rem;
+  margin-top: 2.8rem;
   display: grid;
   grid-template-columns: minmax(0, 44rem);
   gap: 2rem;
