@@ -18,6 +18,7 @@ const pages = [
     key: "research",
     source: "research.html",
     output: "research/index.html",
+    math: true,
     title: "Research | Wu, Zeqi (吴泽齐)",
     description: "Publications and working papers by Zeqi Wu in econometrics, causal inference, policy learning, and network data.",
   },
@@ -43,6 +44,13 @@ const navItems = [
   ["talks", "/talks/", "Talks"],
   ["cv", "/cv/", "CV"],
 ];
+
+const mathHead = [
+  '    <link rel="stylesheet" href="/assets/vendor/katex/katex.min.css">',
+  '    <script defer src="/assets/vendor/katex/katex.min.js"></script>',
+  '    <script defer src="/assets/vendor/katex/contrib/auto-render.min.js"></script>',
+  '    <script defer src="/assets/js/math.js?v=1"></script>',
+].join("\n");
 
 function escapeHtml(value) {
   return value
@@ -84,7 +92,11 @@ for (const page of pages) {
   const main = (await readFile(join(sourceDir, "pages", page.source), "utf8")).trimEnd();
   const renderedHead = render(
     head,
-    { title: escapeHtml(page.title), description: escapeHtml(page.description) },
+    {
+      title: escapeHtml(page.title),
+      description: escapeHtml(page.description),
+      extrahead: page.math ? mathHead : "",
+    },
     `head for ${page.output}`,
   ).trimEnd();
   const renderedHeader = render(

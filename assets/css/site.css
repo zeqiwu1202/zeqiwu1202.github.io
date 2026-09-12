@@ -675,6 +675,19 @@ summary:focus-visible {
   line-height: 1.58;
 }
 
+.abstract-panel .katex {
+  color: inherit;
+  font-size: 1.04em;
+}
+
+.abstract-panel .katex-display {
+  max-width: 100%;
+  margin: 0.7em 0;
+  padding-block: 0.1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 .talk-year + .talk-year {
   margin-top: 3.25rem;
 }
