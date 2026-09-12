@@ -1,5 +1,5 @@
 # Personal Academic Website
 
-This is Zeqi Wu's personal academic website
+This repository hosts the personal academic website of Zeqi Wu.
 
-**Visit**: [https://zeqiwu.com](https://zeqiwu.com)
+**Website:** [https://zeqiwu.com](https://zeqiwu.com)
