@@ -430,6 +430,10 @@ summary:focus-visible {
   padding-top: clamp(4.5rem, 10vw, 7rem);
 }
 
+.home-main > .site-shell {
+  width: min(calc(100% - 2rem), 44rem);
+}
+
 .hero {
   max-width: 46rem;
 }
@@ -439,7 +443,7 @@ summary:focus-visible {
   margin: 0;
   color: var(--accent);
   font-family: var(--font-serif);
-  font-size: clamp(2.4rem, 5.8vw, 3.2rem);
+  font-size: clamp(1.8rem, 4.35vw, 2.4rem);
   font-style: italic;
   font-weight: 700;
   letter-spacing: -0.045em;
@@ -480,7 +484,7 @@ summary:focus-visible {
 .detail-heading {
   margin: 0 0 0.65rem;
   color: var(--text);
-  font-size: 0.78rem;
+  font-size: 0.86rem;
   font-weight: 650;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1055,7 +1059,7 @@ summary:focus-visible {
   }
 
   .hero-title {
-    font-size: clamp(2.2rem, 10.5vw, 2.6rem);
+    font-size: clamp(1.65rem, 7.875vw, 1.95rem);
   }
 
   .cv-topline {
