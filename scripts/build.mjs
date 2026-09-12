@@ -79,6 +79,17 @@ function renderNavigation(activeKey) {
     .join("\n");
 }
 
+function addNewTabBehavior(html) {
+  return html.replace(/<a\b([^>]*)>/g, function (tag, attributes) {
+    const href = attributes.match(/\bhref="([^"]+)"/i)?.[1] ?? "";
+    const isExternal = /^https?:\/\//i.test(href);
+    const isDocument = /^\/.*\.(?:pdf|py)(?:[?#].*)?$/i.test(href);
+    if (!isExternal && !isDocument) return tag;
+    if (/\btarget=/i.test(attributes)) return tag;
+    return tag.replace(/>$/, ' target="_blank" rel="noopener noreferrer">');
+  });
+}
+
 const [layout, head, header, footer] = await Promise.all([
   readFile(join(sourceDir, "partials", "layout.html"), "utf8"),
   readFile(join(sourceDir, "partials", "head.html"), "utf8"),
@@ -104,10 +115,12 @@ for (const page of pages) {
     { navigation: renderNavigation(page.key) },
     `header for ${page.output}`,
   ).trimEnd();
-  const output = render(
-    layout,
-    { head: renderedHead, header: renderedHeader, main, footer: footer.trimEnd() },
-    page.output,
+  const output = addNewTabBehavior(
+    render(
+      layout,
+      { head: renderedHead, header: renderedHeader, main, footer: footer.trimEnd() },
+      page.output,
+    ),
   ).trimEnd() + "\n";
   const outputPath = join(siteDir, page.output);
 
