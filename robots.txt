@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /
 
-Sitemap: https://zeqiwu.com/sitemap.xml
+Sitemap: https://www.zeqiwu.com/sitemap.xml

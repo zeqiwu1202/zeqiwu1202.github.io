@@ -1,1 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?> <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> <url> <loc>https://zeqiwu.com/</loc> </url> <url> <loc>https://zeqiwu.com/cv/</loc> </url> <url> <loc>https://zeqiwu.com/publications/</loc> </url> <url> <loc>https://zeqiwu.com/talks/</loc> </url> <url> <loc>https://zeqiwu.com/research/BNNW/BNNW_slides.pdf</loc> <lastmod>2026-09-11T16:45:43+00:00</lastmod> </url> <url> <loc>https://zeqiwu.com/research/spatial-FD/FDM_clubear.pdf</loc> <lastmod>2026-09-11T16:45:43+00:00</lastmod> </url> <url> <loc>https://zeqiwu.com/research/spatial-FD/FD_spatial_main.pdf</loc> <lastmod>2026-09-11T16:45:43+00:00</lastmod> </url> <url> <loc>https://zeqiwu.com/research/spatial-FD/FD_spatial_supp.pdf</loc> <lastmod>2026-09-11T16:45:43+00:00</lastmod> </url> </urlset>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.zeqiwu.com/</loc></url>
+  <url><loc>https://www.zeqiwu.com/research.html</loc></url>
+  <url><loc>https://www.zeqiwu.com/talks.html</loc></url>
+  <url><loc>https://www.zeqiwu.com/cv.html</loc></url>
+</urlset>
