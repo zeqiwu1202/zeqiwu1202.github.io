@@ -30,8 +30,8 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir _site
-          cp index.html research.html talks.html cv.html CNAME .nojekyll robots.txt sitemap.xml _site/
-          cp -R assets research _site/
+          cp index.html CNAME .nojekyll robots.txt sitemap.xml _site/
+          cp -R assets research talks cv _site/
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
