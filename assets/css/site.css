@@ -605,7 +605,7 @@ summary:focus-visible {
 .publication-venue em {
   font-family: var(--font-serif);
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .publication-actions {
