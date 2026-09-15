@@ -112,13 +112,6 @@
   document.querySelectorAll(".abstract-toggle").forEach(function (button) {
     button.addEventListener("click", function () {
       var willOpen = button.getAttribute("aria-expanded") !== "true";
-
-      document.querySelectorAll(".abstract-toggle[aria-expanded=\"true\"]").forEach(function (other) {
-        var otherPanel = document.getElementById(other.getAttribute("aria-controls"));
-        other.setAttribute("aria-expanded", "false");
-        if (otherPanel) otherPanel.hidden = true;
-      });
-
       var panel = document.getElementById(button.getAttribute("aria-controls"));
       button.setAttribute("aria-expanded", String(willOpen));
       if (panel) panel.hidden = !willOpen;
